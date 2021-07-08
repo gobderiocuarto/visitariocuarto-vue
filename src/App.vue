@@ -3,14 +3,15 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/eventos">Eventos</router-link> |
-      <router-link to="/eventos/filter?s=search">E.Filter</router-link>
-      | <router-link to="/eventos/filter?t=tag">E.Tag</router-link> |
-      <router-link to="/eventos/filter?c=category">E.Category</router-link> |
-      <router-link to="/servicios">Servicios</router-link> |
+      <router-link to="/eventos/filter?s=museos">E.Search</router-link>
+      | <router-link to="/eventos/filter?t=infantiles">E.Tag</router-link> |
+      <router-link to="/eventos/filter?c=resto-bares">E.Category</router-link> |
+      <router-link to="/eventos/filter?d=month">E.Date</router-link> |
+      <!-- <router-link to="/servicios">Servicios</router-link> |
       <router-link to="/servicios/filter?s=search">S.Filter</router-link>
       | <router-link to="/servicios/filter?t=tag">S.Tag</router-link> |
       <router-link to="/servicios/filter?c=category">S.Category</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> -->
     </div>
     <router-view />
   </div>
