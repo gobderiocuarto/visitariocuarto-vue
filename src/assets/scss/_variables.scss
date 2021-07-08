@@ -1,0 +1,52 @@
+// @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400,500,600,800&display=swap");
+
+// options
+$enable-caret: true !default;
+$enable-rounded: false !default;
+$enable-shadows: false !default;
+
+// types
+$font-family-sans-serif: "Roboto" !default;
+
+// colors
+$blue: #003fa2 !default;
+$lightblue: #4ba6de !default;
+$orange: #ff7f30 !default; //turismo
+$green: #00bb70 !default; // deportes
+$yellow: #ffbe3d !default; // yellow
+$blue-dark: #032a69 !default;
+
+// themes
+// $primary: $orange !default;
+// $secondary: $blue !default;
+$primary: $blue !default;
+$secondary: $lightblue !default;
+$cta: $orange !default;
+$dark: $blue-dark !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "cta": $cta,
+  ),
+  $theme-colors
+);
+
+// grid breakpoints
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1260px,
+) !default;
+
+// grid containers
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+) !default;
