@@ -28,7 +28,7 @@ function getServices() {
 }
 function getService(id) {
   console.log(id);
-  return fetch(`${API_URL}/services?paginate=9`)
+  return fetch(`${API_URL}/services/${id}`)
     .then((res) => res.json())
     .then((res) => {
       return res.data;

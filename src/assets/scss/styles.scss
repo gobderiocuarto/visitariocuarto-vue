@@ -1,3 +1,9 @@
 @import "./variables";
 @import "~bootstrap";
+@import "node_modules/bootstrap-vue/src/index.scss";
+
+@import "./fonts";
+@import "./types";
 @import "./base";
+@import "./navbar";
+@import "./footer";

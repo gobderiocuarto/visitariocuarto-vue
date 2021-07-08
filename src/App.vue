@@ -1,21 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/eventos">Eventos</router-link> |
-      <router-link to="/eventos/filter?s=museos">E.Search</router-link>
-      | <router-link to="/eventos/filter?t=infantiles">E.Tag</router-link> |
-      <router-link to="/eventos/filter?c=resto-bares">E.Category</router-link> |
-      <router-link to="/eventos/filter?d=month">E.Date</router-link> |
-      <!-- <router-link to="/servicios">Servicios</router-link> |
-      <router-link to="/servicios/filter?s=search">S.Filter</router-link>
-      | <router-link to="/servicios/filter?t=tag">S.Tag</router-link> |
-      <router-link to="/servicios/filter?c=category">S.Category</router-link> |
-      <router-link to="/about">About</router-link> -->
+  <div id="app" class="main">
+    <Navbar />
+    <div class="container py-5">
+      <router-view />
     </div>
-    <router-view />
+    <Footer />
   </div>
 </template>
+<script>
+import Footer from "./components/Footer.vue";
+import Navbar from "./components/Navbar.vue";
+export default {
+  components: {
+    Navbar,
+    Footer,
+  },
+};
+</script>
 
 <style lang="scss">
 // #app {

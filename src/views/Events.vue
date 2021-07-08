@@ -4,6 +4,7 @@
     <p v-if="$route.query.s">{{ $route.query.s }}</p>
     <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
     <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
+    <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
     <p v-else>todos</p>
     <hr />
     <div v-if="isLoading"><h1>Cargando...</h1></div>
@@ -25,6 +26,10 @@ export default {
     return {
       isLoading: false,
       events: {},
+      page: 1,
+      prev: null,
+      next: null,
+      hasMore: true,
     };
   },
 
