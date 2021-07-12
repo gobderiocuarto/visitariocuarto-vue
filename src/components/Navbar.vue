@@ -38,18 +38,18 @@
 
           <b-nav-item to="/services">Servicios</b-nav-item>
 
-          <!-- <SearchEvents /> -->
+          <SearchEvents />
         </b-navbar-nav>
       </b-collapse>
     </b-container>
   </b-navbar>
 </template>
 <script>
-// import SearchEvents from "@/components/SearchEvents/index.vue";
+import SearchEvents from "@/components/SearchEvents.vue";
 export default {
   name: "Navbar",
   components: {
-    // SearchEvents,
+    SearchEvents,
   },
   data() {
     return {
