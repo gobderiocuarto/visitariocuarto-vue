@@ -9,7 +9,28 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCalendarAlt,
+  faClock,
+  faMapMarkerAlt,
+  faFlag,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+library.add(faCalendarAlt, faClock, faMapMarkerAlt, faFlag);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
 Vue.config.productionTip = false;
+
+const moment = require("moment");
+require("moment/locale/es");
+
+Vue.use(require("vue-moment"), {
+  moment,
+});
+
+console.log(Vue.moment().locale()); //es
 
 new Vue({
   router,

@@ -8,39 +8,35 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="Qué">
-            <li v-for="(item, index) in que" :key="index">
-              <router-link tag="a" class="dropdown-item" :to="item.path">{{
-                item.title
-              }}</router-link>
-            </li>
+            <b-dropdown-item
+              v-for="(item, index) in que"
+              :key="index"
+              :to="item.path"
+              >{{ item.title }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="Donde">
-            <li v-for="(item, index) in donde" :key="index">
-              <router-link tag="a" class="dropdown-item" :to="item.path">{{
-                item.title
-              }}</router-link>
-            </li>
+            <b-dropdown-item
+              v-for="(item, index) in donde"
+              :key="index"
+              :to="item.path"
+              >{{ item.title }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="Cuando">
-            <li v-for="(item, index) in cuando" :key="index">
-              <router-link tag="a" class="dropdown-item" :to="item.path">{{
-                item.title
-              }}</router-link>
-            </li>
+            <b-dropdown-item
+              v-for="(item, index) in cuando"
+              :key="index"
+              :to="item.path"
+              >{{ item.title }}</b-dropdown-item
+            >
           </b-nav-item-dropdown>
-          <li class="nav-item">
-            <router-link tag="a" class="nav-link" to="/eventos"
-              >Eventos</router-link
-            >
-          </li>
 
-          <li class="nav-item">
-            <router-link tag="a" class="nav-link" to="/servicios"
-              >Servicios</router-link
-            >
-          </li>
+          <b-nav-item class="nav-item" to="/eventos">Eventos</b-nav-item>
+
+          <b-nav-item class="nav-item" to="/servicios">Servicios</b-nav-item>
 
           <SearchEvents />
         </b-navbar-nav>

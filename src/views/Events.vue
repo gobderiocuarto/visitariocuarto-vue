@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="events">
     <h1>Eventos</h1>
     <p v-if="$route.query.s">{{ $route.query.s }}</p>
     <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
@@ -8,19 +8,6 @@
     <p v-else>todos</p>
     <hr />
     <p>total {{ total }} | page: {{ page }}</p>
-    <!-- <div v-if="isLoading"><h3>Cargando...</h3></div>
-    <div v-if="!count"><h3>No hay eventos</h3></div>
-    <template v-else>
-      <list-of-events :events="events"></list-of-events>
-      <button
-        v-if="hasMore"
-        class="btn btn-outline-primary"
-        @click="handleScrollInfinite"
-      >
-        ver mas
-      </button>
-      <button v-else class="btn btn-outline-primary" disabled>ver mas</button>
-    </template> -->
     <div v-if="isLoading">cargando</div>
     <div v-else>
       <div v-if="isEmpty">no hay registros</div>
