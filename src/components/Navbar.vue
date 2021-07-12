@@ -8,35 +8,39 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown text="Qué">
-            <b-dropdown-item
-              v-for="(item, index) in que"
-              :key="index"
-              :href="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
+            <li v-for="(item, index) in que" :key="index">
+              <router-link tag="a" class="dropdown-item" :to="item.path">{{
+                item.title
+              }}</router-link>
+            </li>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="Donde">
-            <b-dropdown-item
-              v-for="(item, index) in donde"
-              :key="index"
-              :href="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
+            <li v-for="(item, index) in donde" :key="index">
+              <router-link tag="a" class="dropdown-item" :to="item.path">{{
+                item.title
+              }}</router-link>
+            </li>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown text="Cuando">
-            <b-dropdown-item
-              v-for="(item, index) in cuando"
-              :key="index"
-              :href="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
+            <li v-for="(item, index) in cuando" :key="index">
+              <router-link tag="a" class="dropdown-item" :to="item.path">{{
+                item.title
+              }}</router-link>
+            </li>
           </b-nav-item-dropdown>
+          <li class="nav-item">
+            <router-link tag="a" class="nav-link" to="/eventos"
+              >Eventos</router-link
+            >
+          </li>
 
-          <b-nav-item @click="getAllEvents()">Eventos</b-nav-item>
-
-          <b-nav-item to="/services">Servicios</b-nav-item>
+          <li class="nav-item">
+            <router-link tag="a" class="nav-link" to="/servicios"
+              >Servicios</router-link
+            >
+          </li>
 
           <SearchEvents />
         </b-navbar-nav>
@@ -66,21 +70,21 @@ export default {
           path: "/eventos/filter?c=discotecas-pubs",
           slug: "discotecas-pubs",
         },
-        {
-          title: "Museos y Centros Culturales ",
-          path: "/eventos/filter?c=museos-y-centros-culturales",
-          slug: "museos-y-centros-culturales",
-        },
-        {
-          title: "Paseos al aire libre",
-          path: "/eventos/filter?c=paseos-al-aire-libre",
-          slug: "paseos-al-aire-libre",
-        },
-        {
-          title: "Teatros ",
-          path: "/eventos/filter?c=teatros",
-          slug: "teatros",
-        },
+        // {
+        //   title: "Museos y Centros Culturales ",
+        //   path: "/eventos/filter?c=museos-y-centros-culturales",
+        //   slug: "museos-y-centros-culturales",
+        // },
+        // {
+        //   title: "Paseos al aire libre",
+        //   path: "/eventos/filter?c=paseos-al-aire-libre",
+        //   slug: "paseos-al-aire-libre",
+        // },
+        // {
+        //   title: "Teatros ",
+        //   path: "/eventos/filter?c=teatros",
+        //   slug: "teatros",
+        // },
       ],
       que: [
         {

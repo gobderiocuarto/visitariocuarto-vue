@@ -7,8 +7,35 @@
     <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
     <p v-else>todos</p>
     <hr />
-    <div v-if="isLoading"><h1>Cargando...</h1></div>
-    <list-of-events v-if="!isLoading" :events="events"></list-of-events>
+    <p>total {{ total }} | page: {{ page }}</p>
+    <!-- <div v-if="isLoading"><h3>Cargando...</h3></div>
+    <div v-if="!count"><h3>No hay eventos</h3></div>
+    <template v-else>
+      <list-of-events :events="events"></list-of-events>
+      <button
+        v-if="hasMore"
+        class="btn btn-outline-primary"
+        @click="handleScrollInfinite"
+      >
+        ver mas
+      </button>
+      <button v-else class="btn btn-outline-primary" disabled>ver mas</button>
+    </template> -->
+    <div v-if="isLoading">cargando</div>
+    <div v-else>
+      <div v-if="isEmpty">no hay registros</div>
+      <div v-else>
+        <ListOfEvents :events="events" />
+        <button
+          v-if="hasMore"
+          class="btn btn-outline-primary"
+          @click="handleScrollInfinite"
+        >
+          ver mas
+        </button>
+        <button v-else class="btn btn-outline-primary" disabled>ver mas</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,6 +52,9 @@ export default {
   data() {
     return {
       isLoading: false,
+      isEmpty: false,
+      query: null,
+      total: 0,
       events: {},
       page: 1,
       prev: null,
@@ -70,12 +100,46 @@ export default {
         ? filterByDate
         : null;
 
+      this.query = query;
+
       // console.log([filterBySearch, filterByTag, filterByCategory]);
-      console.log(query);
+      // console.log(query);
 
       Promise.all([api.getEvents({ query: query })])
         .then(([events]) => {
-          this.events = events;
+          const count = events.data.length;
+          //console.log(count);
+          this.total = count;
+          this.isLoading = false;
+          this.hasMore = true;
+          this.page = 1;
+          this.prev = null;
+          this.next = null;
+
+          if (count < 9) {
+            this.hasMore = false;
+          }
+
+          if (count) {
+            this.isEmpty = false;
+            this.events = events.data;
+          } else {
+            this.isEmpty = true;
+          }
+        })
+        .finally(() => (this.isLoading = false));
+    },
+
+    handleScrollInfinite() {
+      this.page++;
+      let url = "&page=" + this.page;
+      Promise.all([api.getEvents({ query: this.query, page: url })])
+        .then(([events]) => {
+          this.next = events.links.next;
+          this.events = this.events.concat(events.data);
+          if (this.next == null) {
+            this.hasMore = false;
+          }
         })
         .finally(() => (this.isLoading = false));
     },
