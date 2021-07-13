@@ -23,6 +23,15 @@ function getEvent(id) {
       return res.data;
     });
 }
+function getEventsHighlights({ url = null } = {}) {
+  console.log(url);
+  return fetch(`${API_URL}/events/highlights/slider_hero`)
+    .then((res) => res.json())
+    .then((res) => {
+      //console.log(res.data);
+      return res.data;
+    });
+}
 function getServices() {
   return fetch(`${API_URL}/services?paginate=9`)
     .then((res) => res.json())
@@ -42,6 +51,7 @@ function getService(id) {
 export default {
   getEvents,
   getEvent,
+  getEventsHighlights,
   getServices,
   getService,
 };

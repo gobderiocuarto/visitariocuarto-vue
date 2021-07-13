@@ -1,0 +1,46 @@
+.carousel {
+  background: #000;
+  .caruosel-image {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.9;
+  }
+  .carousel-caption {
+    background-color: rgba($dark, 0.9);
+    bottom: 60px;
+    width: 40%;
+    left: 30%;
+    padding: 30px 60px;
+    h1 {
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.04rem;
+    }
+  }
+  .carousel-indicators {
+    li {
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel {
+    .caruosel-image {
+      height: 400px;
+    }
+    .carousel-caption {
+      width: 70%;
+      left: 15%;
+      padding: 30px 10px;
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
