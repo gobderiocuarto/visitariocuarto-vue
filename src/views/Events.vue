@@ -1,26 +1,31 @@
 <template>
-  <div class="events">
-    <h1>Eventos</h1>
-    <p v-if="$route.query.s">{{ $route.query.s }}</p>
-    <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
-    <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
-    <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
-    <p v-else>todos</p>
-    <hr />
-    <p>total {{ total }} | page: {{ page }}</p>
-    <div v-if="isLoading">cargando</div>
-    <div v-else>
-      <div v-if="isEmpty">no hay registros</div>
+  <div class="wrapper events">
+    <div class="container">
+      <h1>Eventos</h1>
+      <p v-if="$route.query.s">{{ $route.query.s }}</p>
+      <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
+      <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
+      <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
+      <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
+      <p v-else>todos</p>
+      <hr />
+      <p>total {{ total }} | page: {{ page }}</p>
+      <div v-if="isLoading">cargando</div>
       <div v-else>
-        <ListOfEvents :events="events" />
-        <button
-          v-if="hasMore"
-          class="btn btn-outline-primary"
-          @click="handleScrollInfinite"
-        >
-          ver mas
-        </button>
-        <button v-else class="btn btn-outline-primary" disabled>ver mas</button>
+        <div v-if="isEmpty">no hay registros</div>
+        <div v-else>
+          <ListOfEvents :events="events" />
+          <button
+            v-if="hasMore"
+            class="btn btn-outline-primary"
+            @click="handleScrollInfinite"
+          >
+            ver mas
+          </button>
+          <button v-else class="btn btn-outline-primary" disabled>
+            ver mas
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -65,16 +70,19 @@ export default {
       this.isLoading = true;
 
       const filterBySearch = this.$route.query.s
-        ? `?search=${this.$route.query.s}&`
+        ? `/events?search=${this.$route.query.s}&`
         : null;
       const filterByTag = this.$route.query.t
-        ? `/tags/${this.$route.query.t}?`
+        ? `/events/tags/${this.$route.query.t}?`
         : null;
       const filterByCategory = this.$route.query.c
-        ? `/categories/${this.$route.query.c}?`
+        ? `/events/categories/${this.$route.query.c}?`
         : null;
       const filterByDate = this.$route.query.d
-        ? `/when/${this.$route.query.d}?`
+        ? `/events/when/${this.$route.query.d}?`
+        : null;
+      const filterByFrame = this.$route.query.f
+        ? `/frames/${this.$route.query.f}/events?`
         : null;
 
       const query = filterBySearch
@@ -85,6 +93,8 @@ export default {
         ? filterByCategory
         : filterByDate
         ? filterByDate
+        : filterByFrame
+        ? filterByFrame
         : null;
 
       this.query = query;

@@ -3,8 +3,10 @@ const API_URL = "https://admin.visitariocuarto.gob.ar/api/v1";
 function getEvents({ paginate = 9, query = null, page = null } = {}) {
   //console.log(page);
   const apiUrl = query
-    ? `${API_URL}/events${query}paginate=${paginate}${page}`
+    ? `${API_URL}${query}paginate=${paginate}${page}`
     : `${API_URL}/events?paginate=${paginate}${page}`;
+
+  //console.log(apiUrl);
 
   return fetch(apiUrl)
     .then((res) => res.json())
@@ -17,6 +19,7 @@ function getEvent(id) {
   return fetch(`${API_URL}/events/${id}`)
     .then((res) => res.json())
     .then((res) => {
+      //console.log(res.data);
       return res.data;
     });
 }
