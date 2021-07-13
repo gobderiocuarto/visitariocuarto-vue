@@ -10,12 +10,29 @@
       @keypress.enter="navigate"
       role="link"
     >
-      <img
-        class="card-image"
-        :src="event.image.mediumUrl"
-        alt=""
-        loading="lazy"
-      />
+      <div v-if="!isLoaded" class="card-spinner">
+        <Spinner />
+      </div>
+      <div v-if="isError">
+        <img
+          v-show="isLoaded || isError"
+          class="card-image not-found"
+          src="https://images.unsplash.com/photo-1508402476522-c77c2fa4479d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+          alt=""
+          @load="loaded"
+          @error="error"
+        />
+      </div>
+      <div v-else>
+        <img
+          v-show="isLoaded || !isError"
+          class="card-image"
+          :src="event.image.largeUrl"
+          alt=""
+          @load="loaded"
+          @error="error"
+        />
+      </div>
       <div class="card-body">
         <div class="card-content">
           <div class="content-inner">
@@ -55,15 +72,33 @@
           </div>
         </div>
       </div>
-      <div class="card-footer">footer</div>
     </span>
   </router-link>
 </template>
 <script>
+import Spinner from "./Spinner.vue";
 export default {
   name: "EventCard",
+  components: {
+    Spinner,
+  },
   props: {
     event: Object,
+  },
+  data() {
+    return {
+      isLoaded: false,
+      isError: false,
+    };
+  },
+  methods: {
+    loaded() {
+      this.isLoaded = true;
+    },
+    error() {
+      this.isLoaded = true;
+      this.isError = true;
+    },
   },
 };
 </script>

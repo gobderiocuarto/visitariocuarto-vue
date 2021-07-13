@@ -10,21 +10,22 @@
       <p v-else>todos</p>
       <hr />
       <p>total {{ total }} | page: {{ page }}</p>
-      <div v-if="isLoading">cargando</div>
-      <div v-else>
-        <div v-if="isEmpty">no hay registros</div>
-        <div v-else>
-          <ListOfEvents :events="events" />
-          <button
-            v-if="hasMore"
-            class="btn btn-outline-primary"
-            @click="handleScrollInfinite"
-          >
-            ver mas
-          </button>
-          <button v-else class="btn btn-outline-primary" disabled>
-            ver mas
-          </button>
+      <div v-if="isLoading" class="text-center"><spinner /></div>
+      <div v-if="!isLoading">
+        <div v-if="isEmpty">no hay eventos</div>
+        <div v-if="!isEmpty">
+          <list-of-events :events="events" />
+          <div v-if="isReLoading"><spinner /></div>
+          <div v-if="!isReLoading" class="text-center">
+            <button
+              v-if="hasMore"
+              class="btn btn-primary"
+              @click="handleScrollInfinite"
+            >
+              ver mas
+            </button>
+            <button v-else class="btn btn-primary" disabled>cargar más</button>
+          </div>
         </div>
       </div>
     </div>
@@ -34,16 +35,19 @@
 <script>
 import api from "@/services/api";
 import ListOfEvents from "@/components/ListOfEvents";
+import Spinner from "../components/Spinner.vue";
 export default {
   name: "Events",
 
   components: {
     ListOfEvents,
+    Spinner,
   },
 
   data() {
     return {
       isLoading: false,
+      isReLoading: false,
       isEmpty: false,
       query: null,
       total: 0,
@@ -128,6 +132,7 @@ export default {
     },
 
     handleScrollInfinite() {
+      this.isReLoading = true;
       this.page++;
       let url = "&page=" + this.page;
       Promise.all([api.getEvents({ query: this.query, page: url })])
@@ -138,7 +143,7 @@ export default {
             this.hasMore = false;
           }
         })
-        .finally(() => (this.isLoading = false));
+        .finally(() => (this.isReLoading = false));
     },
   },
 };
