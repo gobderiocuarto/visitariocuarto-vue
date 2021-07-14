@@ -58,11 +58,13 @@ export default {
   },
   methods: {
     getData() {
-      Promise.all([api.getEventsHighlights({})]).then(([events]) => {
-        // console.log(events);
-        this.events = events;
-        console.log(events);
-      });
+      Promise.all([api.getEventsHighlights({ url: "slider_hero" })]).then(
+        ([events]) => {
+          // console.log(events);
+          this.events = events;
+          console.log(events);
+        }
+      );
     },
     onSlideStart() {
       this.sliding = true;

@@ -25,7 +25,8 @@ function getEvent(id) {
 }
 function getEventsHighlights({ url = null } = {}) {
   console.log(url);
-  return fetch(`${API_URL}/events/highlights/slider_hero`)
+  const path = url ? url : "slider_hero";
+  return fetch(`${API_URL}/events/highlights/${path}`)
     .then((res) => res.json())
     .then((res) => {
       //console.log(res.data);
