@@ -15,10 +15,11 @@ import {
   faClock,
   faMapMarkerAlt,
   faFlag,
+  faImage,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faCalendarAlt, faClock, faMapMarkerAlt, faFlag);
+library.add(faCalendarAlt, faClock, faMapMarkerAlt, faFlag, faImage);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;

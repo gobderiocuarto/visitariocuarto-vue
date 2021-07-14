@@ -10,24 +10,23 @@
       @keypress.enter="navigate"
       role="link"
     >
-      <div v-if="!isLoaded" class="card-spinner">
+      <div v-if="!isLoaded" class="card-image center spinner">
         <Spinner />
       </div>
       <div v-if="isError">
-        <img
-          v-show="isLoaded || isError"
-          class="card-image not-found"
-          src="https://images.unsplash.com/photo-1508402476522-c77c2fa4479d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
-          alt=""
-          @load="loaded"
-          @error="error"
-        />
+        <div class="card-image center error" @error="error">
+          <font-awesome-icon icon="image" size="2x" class="card-icon" />
+          <small>imagen no disponible</small>
+          <div>
+            <br />
+          </div>
+        </div>
       </div>
       <div v-else>
         <img
-          v-show="isLoaded || !isError"
+          v-if="isLoaded || !isError"
           class="card-image"
-          :src="event.image.largeUrl"
+          :src="event.image.mediumUrl"
           alt=""
           @load="loaded"
           @error="error"

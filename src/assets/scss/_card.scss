@@ -25,27 +25,31 @@
         }
       }
     }
-    .card-spinner {
-      width: 100%;
-      height: 200px;
-      border-radius: 4px 4px 0 0;
-      background-color: rgba($secondary, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-bottom: 40px;
-      .lds-ellipsis {
-        transform: scale(50%);
-      }
-    }
+
     .card-image {
+      position: absolute;
+      top: 0;
       width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 4px 4px 0 0;
-      background-color: rgba($secondary, 0.1);
-      &.not-found {
-        opacity: 0.4;
+      background-color: rgba($secondary, 0.06);
+      &.center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding-bottom: 40px;
+      }
+      &.spinner {
+        .lds-ellipsis {
+          transform: scale(50%);
+        }
+      }
+      &.error {
+        color: rgba($secondary, 0.5);
+        padding-bottom: 30px;
       }
     }
     .card-body {
