@@ -6,9 +6,7 @@
         v-for="(event, index) in events"
         :key="index"
       >
-        <router-link :to="'/evento/' + event.id + '/' + event.slug">
-          <EventCard :event="event" />
-        </router-link>
+        <EventCard :event="event" />
       </div>
     </div>
   </div>

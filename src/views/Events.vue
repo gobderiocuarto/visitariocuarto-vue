@@ -55,6 +55,7 @@ export default {
       query: null,
       total: 0,
       events: {},
+      paginate: 9,
       page: 1,
       prev: null,
       next: null,
@@ -109,7 +110,7 @@ export default {
       // console.log([filterBySearch, filterByTag, filterByCategory]);
       // console.log(query);
 
-      Promise.all([api.getEvents({ query: query })])
+      Promise.all([api.getEvents({ paginate: this.paginate, query: query })])
         .then(([events]) => {
           const count = events.data.length;
           //console.log(count);
@@ -120,7 +121,7 @@ export default {
           this.prev = null;
           this.next = null;
 
-          if (count < 9) {
+          if (count < this.paginate) {
             this.hasMore = false;
           }
 
@@ -142,6 +143,7 @@ export default {
         .then(([events]) => {
           this.next = events.links.next;
           this.events = this.events.concat(events.data);
+          this.total = this.total + events.data.length;
           if (this.next == null) {
             this.hasMore = false;
           }

@@ -16,10 +16,24 @@ import {
   faMapMarkerAlt,
   faFlag,
   faImage,
+  faFolder,
+  faTag,
+  faPhoneAlt,
+  faMobileAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faCalendarAlt, faClock, faMapMarkerAlt, faFlag, faImage);
+library.add(
+  faCalendarAlt,
+  faClock,
+  faMapMarkerAlt,
+  faFlag,
+  faImage,
+  faFolder,
+  faTag,
+  faPhoneAlt,
+  faMobileAlt
+);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false;

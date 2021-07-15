@@ -10,6 +10,16 @@
       <h2>próximos eventos</h2>
       <div class="container">
         <list-of-events :events="events" />
+        <router-link to="/eventos" custom v-slot="{ navigate }">
+          <a
+            class="btn btn-primary"
+            @click="navigate"
+            @keypress.enter="navigate"
+            role="link"
+          >
+            ver mas</a
+          ></router-link
+        >
       </div>
     </section>
     <list-of-categories
@@ -41,6 +51,7 @@ export default {
     return {
       isLoading: false,
       events: [],
+      paginate: 6,
       categoriesOfEvents: [
         {
           id: 1,
@@ -112,7 +123,7 @@ export default {
       // console.log([filterBySearch, filterByTag, filterByCategory]);
       // console.log(query);
 
-      Promise.all([api.getEvents({ query: query })])
+      Promise.all([api.getEvents({ paginate: this.paginate, query: query })])
         .then(([events]) => {
           const count = events.data.length;
           //console.log(count);

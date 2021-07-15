@@ -1,0 +1,113 @@
+.service-card {
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 8px;
+  border-radius: 4px;
+  color: $gray-900;
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 0 8px rgba($gray-500, 1);
+  }
+  figure {
+    position: relative;
+    height: 96px;
+    margin-bottom: 0;
+    box-shadow: 0 0 6px $gray-400;
+    border-radius: 8px;
+  }
+  .card-icon {
+    margin-right: 4px;
+    color: $cta;
+    transform: scale(90%);
+  }
+  .card-image {
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba($secondary, 0.06);
+    &.center {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &.spinner {
+      .lds-ellipsis {
+        transform: scale(50%);
+      }
+    }
+    &.error {
+      padding-top: 20px;
+      color: rgba($secondary, 0.6);
+      svg {
+        color: rgba($secondary, 0.4);
+        transform: scale(80%);
+      }
+    }
+  }
+  .card-body {
+    padding: 6px 0;
+    .card-title {
+      font-size: 1.04rem;
+      letter-spacing: 0.02rem;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .card-categories {
+      font-size: 0.8em;
+      margin-bottom: 4px;
+      .category {
+        margin-bottom: 2px;
+      }
+      .tags {
+        margin-bottom: 2px;
+        span {
+          margin-right: 4px;
+          padding-right: 4px;
+          border-right: 1px solid $gray-400;
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+    .card-contact {
+      display: flex;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      font-weight: 500;
+      .contact-phone {
+        margin-right: 8px;
+      }
+      .contact-address {
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .service-card {
+    margin-bottom: 20px;
+    padding: 12px;
+    figure {
+      height: 240px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 577px) and (max-width: 767px) {
+  .service-card {
+    margin-bottom: 10px;
+    padding: 12px;
+    figure {
+      height: 180px;
+      margin-bottom: 12px;
+    }
+  }
+}

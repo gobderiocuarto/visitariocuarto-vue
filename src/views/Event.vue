@@ -12,7 +12,7 @@
         <div v-if="!isLoading" class="row">
           <div class="col-md-8">
             <event-detail :event="event" />
-            <tags :tags="event.tags" class="mb-4" />
+            <tags :tags="event.tags" url="/eventos/" class="mb-4" />
             <related-events />
           </div>
           <div class="col-md-4">

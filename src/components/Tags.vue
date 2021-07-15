@@ -4,7 +4,7 @@
     <router-link
       v-for="(tag, index) in tags"
       :key="index"
-      :to="'/eventos/filter?t=' + tag.slug"
+      :to="url + 'filter?t=' + tag.slug"
     >
       <span class="tags-item">
         {{ tag.name }}
@@ -17,6 +17,7 @@ export default {
   name: "Tags",
   props: {
     tags: Array,
+    url: String,
   },
 };
 </script>

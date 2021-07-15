@@ -11,32 +11,34 @@
       <search-services />
       <p class="mt-3">total {{ total }} | page: {{ page }}</p>
       <hr />
-      <!-- <div v-if="isLoading" class="text-center"><spinner /></div>
-      <div v-if="!isLoading">
-        <h3>listado de servicios</h3>
-        <div v-for="(service, index) in services" :key="index">
-          {{ service.name }}
-        </div>
-      </div> -->
-      <div v-if="isLoading" class="text-center"><spinner /></div>
-      <div v-if="!isLoading">
-        <div v-if="isEmpty">no hay servicios</div>
-        <div v-if="!isEmpty">
-          <list-of-services :services="services" />
-          <!-- <div v-for="(service, index) in services" :key="index">
-            {{ service.name }}
-          </div> -->
-          <div v-if="isReLoading"><spinner /></div>
-          <div v-if="!isReLoading" class="text-center">
-            <button
-              v-if="hasMore"
-              class="btn btn-primary"
-              @click="handleScrollInfinite"
-            >
-              ver mas
-            </button>
-            <button v-else class="btn btn-primary" disabled>cargar más</button>
+      <div class="row">
+        <div class="col-lg-9 col-xl-8">
+          <div v-if="isLoading" class="text-center"><spinner /></div>
+          <div v-if="!isLoading">
+            <div v-if="isEmpty">no hay servicios</div>
+            <div v-if="!isEmpty">
+              <list-of-services :services="services" />
+              <div v-if="isReLoading"><spinner /></div>
+              <div v-if="!isReLoading" class="text-center">
+                <button
+                  v-if="hasMore"
+                  class="btn btn-primary mt-3"
+                  @click="handleScrollInfinite"
+                >
+                  ver mas
+                </button>
+                <button v-else class="btn btn-primary" disabled>
+                  cargar más
+                </button>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="col-lg-3 ol-xl-4">
+          <recommended-events />
+          <recommended-services msg="donde dormir" />
+          <recommended-services msg="donde comer" />
+          <recommended-services msg="otros servcios" />
         </div>
       </div>
     </div>
@@ -48,6 +50,8 @@ import api from "@/services/api";
 import ListOfServices from "@/components/ListOfServices";
 import Spinner from "../components/Spinner.vue";
 import SearchServices from "../components/SearchServices.vue";
+import RecommendedEvents from "../components/RecommendedEvents.vue";
+import RecommendedServices from "../components/RecommendedServices.vue";
 export default {
   name: "Services",
 
@@ -55,6 +59,9 @@ export default {
     Spinner,
     ListOfServices,
     SearchServices,
+
+    RecommendedServices,
+    RecommendedEvents,
   },
 
   data() {
@@ -65,6 +72,7 @@ export default {
       query: null,
       total: 0,
       services: {},
+      paginate: 4,
       page: 1,
       prev: null,
       next: null,
@@ -109,7 +117,7 @@ export default {
       // console.log([filterBySearch, filterByTag, filterByCategory]);
       // console.log(query);
 
-      Promise.all([api.getServices({ query: query })])
+      Promise.all([api.getServices({ paginate: this.paginate, query: query })])
         .then(([services]) => {
           const count = services.data.length;
           //console.log(count);
@@ -120,7 +128,7 @@ export default {
           this.prev = null;
           this.next = null;
 
-          if (count < 9) {
+          if (count < this.paginate) {
             this.hasMore = false;
           }
 
@@ -142,6 +150,7 @@ export default {
         .then(([services]) => {
           this.next = services.links.next;
           this.services = this.services.concat(services.data);
+          this.total = this.total + services.data.length;
           if (this.next == null) {
             this.hasMore = false;
           }

@@ -33,7 +33,7 @@ function getEventsHighlights({ url = null } = {}) {
       return res.data;
     });
 }
-function getServices({ paginate = 9, query = null, page = null } = {}) {
+function getServices({ paginate = 4, query = null, page = null } = {}) {
   //console.log(page);
   const apiUrl = query
     ? `${API_URL}${query}paginate=${paginate}${page}`
@@ -48,10 +48,11 @@ function getServices({ paginate = 9, query = null, page = null } = {}) {
     });
 }
 function getService(id) {
-  console.log(id);
+  //console.log(id);
   return fetch(`${API_URL}/services/${id}`)
     .then((res) => res.json())
     .then((res) => {
+      console.log(res.data);
       return res.data;
     });
 }

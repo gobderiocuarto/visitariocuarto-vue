@@ -5,7 +5,7 @@
     v-slot="{ navigate }"
   >
     <span
-      :class="event.frame ? 'card card-frame' : 'card'"
+      :class="event.frame ? 'card event-card card-frame' : 'card event-card'"
       @click="navigate"
       @keypress.enter="navigate"
       role="link"
