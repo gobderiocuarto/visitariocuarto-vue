@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper events">
+  <div class="wrapper">
     <div class="container">
       <h1>Eventos</h1>
       <p v-if="$route.query.s">{{ $route.query.s }}</p>
@@ -8,8 +8,9 @@
       <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
       <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
       <p v-else>todos</p>
+      <search-events />
+      <p class="mt-3">total {{ total }} | page: {{ page }}</p>
       <hr />
-      <p>total {{ total }} | page: {{ page }}</p>
       <div v-if="isLoading" class="text-center"><spinner /></div>
       <div v-if="!isLoading">
         <div v-if="isEmpty">no hay eventos</div>
@@ -36,12 +37,14 @@
 import api from "@/services/api";
 import ListOfEvents from "@/components/ListOfEvents";
 import Spinner from "../components/Spinner.vue";
+import SearchEvents from "../components/SearchEvents.vue";
 export default {
   name: "Events",
 
   components: {
     ListOfEvents,
     Spinner,
+    SearchEvents,
   },
 
   data() {

@@ -33,11 +33,18 @@ function getEventsHighlights({ url = null } = {}) {
       return res.data;
     });
 }
-function getServices() {
-  return fetch(`${API_URL}/services?paginate=9`)
+function getServices({ paginate = 9, query = null, page = null } = {}) {
+  //console.log(page);
+  const apiUrl = query
+    ? `${API_URL}${query}paginate=${paginate}${page}`
+    : `${API_URL}/services?paginate=${paginate}${page}`;
+
+  //console.log(apiUrl);
+
+  return fetch(apiUrl)
     .then((res) => res.json())
     .then((res) => {
-      return res.data;
+      return res;
     });
 }
 function getService(id) {

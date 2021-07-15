@@ -1,0 +1,58 @@
+.home {
+  h2 {
+    color: $primary;
+    letter-spacing: 0.06rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  h3 {
+    color: $primary;
+    letter-spacing: 0.06rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+  .list-of-events-hightlights {
+    // background-color: $gray-200;
+    .card {
+      margin-bottom: 30px;
+      .card-image {
+        height: 220px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .list-of-categories {
+    background-color: rgba($secondary, 1);
+    color: white;
+    padding: 60px 0;
+    h3 {
+      color: white;
+    }
+    .btn {
+      text-transform: uppercase;
+      padding: 12px;
+      border-radius: 2px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home {
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: -0.02rem;
+      margin-bottom: 30px;
+    }
+    h3 {
+      letter-spacing: 0.02rem;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+    .list-of-categories {
+    }
+  }
+}

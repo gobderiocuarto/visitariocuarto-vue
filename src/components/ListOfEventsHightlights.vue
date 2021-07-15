@@ -1,8 +1,8 @@
 <template>
-  <section class="carousel-of-events">
+  <section class="list-of-events-hightlights">
     <div class="container">
-      <h3>Eventos Descatados</h3>
-      <div class="row">
+      <h2>Eventos Descatados</h2>
+      <div class="row justify-content-center">
         <div class="col-md-4" v-for="(event, index) in events" :key="index">
           <div class="card">
             <img :src="event.image.mediumUrl" alt="" class="card-image" />
@@ -34,7 +34,7 @@
 <script>
 import api from "@/services/api";
 export default {
-  name: "CarouselOfEvents",
+  name: "ListOfEventsHightlights",
   data() {
     return {
       events: [],
