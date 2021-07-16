@@ -1,12 +1,12 @@
 const API_URL = "https://admin.visitariocuarto.gob.ar/api/v1";
 
 function getEvents({ paginate = 9, query = null, page = null } = {}) {
-  //console.log(page);
+  //console.log(query);
   const apiUrl = query
     ? `${API_URL}${query}paginate=${paginate}${page}`
     : `${API_URL}/events?paginate=${paginate}${page}`;
 
-  //console.log(apiUrl);
+  console.log(apiUrl);
 
   return fetch(apiUrl)
     .then((res) => res.json())
@@ -23,17 +23,19 @@ function getEvent(id) {
       return res.data;
     });
 }
-function getEventsHighlights({ url = null } = {}) {
-  console.log(url);
+function getEventsHighlights({ paginate = 4, url = null } = {}) {
+  //console.log(url);
   const path = url ? url : "slider_hero";
-  return fetch(`${API_URL}/events/highlights/${path}`)
+  const apiUrl = `${API_URL}/events/highlights/${path}?paginate=${paginate}`;
+  //console.log(apiUrl);
+  return fetch(apiUrl)
     .then((res) => res.json())
     .then((res) => {
       //console.log(res.data);
       return res.data;
     });
 }
-function getServices({ paginate = 4, query = null, page = null } = {}) {
+function getServices({ paginate = 4, query = null, page = "" } = {}) {
   //console.log(page);
   const apiUrl = query
     ? `${API_URL}${query}paginate=${paginate}${page}`
@@ -52,7 +54,7 @@ function getService(id) {
   return fetch(`${API_URL}/services/${id}`)
     .then((res) => res.json())
     .then((res) => {
-      console.log(res.data);
+      //console.log(res.data);
       return res.data;
     });
 }

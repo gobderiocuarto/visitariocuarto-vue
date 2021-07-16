@@ -36,76 +36,81 @@
         transform: scale(50%);
       }
     }
+
+    &-info {
+      // background-color: orange;
+      margin-bottom: 30px;
+    }
     &-description {
       //color: red;
       // width: 100%;
-      //background-color: red;
+      // background-color: red;
+      margin-bottom: 30px;
     }
   }
-  .data {
-    //background-color: red;
-    margin-bottom: 40px;
-    .card {
-      border: 0;
-      .card-header {
-        background-color: $secondary;
-        text-transform: uppercase;
-        color: white;
-        font-weight: 500;
-        font-size: 1.2rem;
-      }
-      .card-body {
-        padding: 0;
-        .item {
-          display: flex;
-          align-items: center;
-          //background-color: pink;
-          padding: 16px 0;
-          border-bottom: 1px solid $gray-200;
-          &:first-child {
-            padding-top: 0;
-          }
-          &:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-          }
-          .icon {
-            height: 34px;
-            width: 34px;
-            margin-right: 12px;
-            background-color: $primary;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+  // .data {
+  //   margin-bottom: 40px;
+  //   .card {
+  //     border: 0;
+  //     .card-header {
+  //       background-color: $secondary;
+  //       text-transform: uppercase;
+  //       color: white;
+  //       font-weight: 500;
+  //       font-size: 1.2rem;
+  //     }
+  //     .card-body {
+  //       padding: 0;
+  //       .item {
+  //         display: flex;
+  //         align-items: center;
+  //         background-color: pink;
+  //         padding: 16px 0;
+  //         border-bottom: 1px solid $gray-200;
+  //         &:first-child {
+  //           padding-top: 0;
+  //         }
+  //         &:last-child {
+  //           border-bottom: none;
+  //           padding-bottom: 0;
+  //         }
+  //         .icon {
+  //           height: 34px;
+  //           width: 34px;
+  //           margin-right: 12px;
+  //           background-color: $primary;
+  //           display: flex;
+  //           align-items: center;
+  //           justify-content: center;
 
-            svg {
-              height: 20px;
-              width: 20px;
-              color: $white;
-            }
-          }
-          h6 {
-            margin-bottom: 0;
-            text-transform: uppercase;
-            font-weight: 400;
-            color: $secondary;
-            font-size: 0.9rem;
-          }
-          p {
-            margin-bottom: 0;
-            font-weight: 500;
-            &::first-letter {
-              text-transform: uppercase;
-            }
-            span {
-              text-transform: lowercase;
-              &::first-letter {
-                text-transform: uppercase;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+  //           svg {
+  //             height: 20px;
+  //             width: 20px;
+  //             color: $white;
+  //           }
+  //         }
+  //         h6 {
+  //           margin-bottom: 0;
+  //           text-transform: uppercase;
+  //           font-weight: 400;
+  //           color: $secondary;
+  //           font-size: 0.9rem;
+  //         }
+  //         p {
+  //           margin-bottom: 0;
+  //           font-weight: 500;
+  //           &::first-letter {
+  //             text-transform: uppercase;
+  //           }
+  //           span {
+  //             text-transform: lowercase;
+  //             &::first-letter {
+  //               text-transform: uppercase;
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }

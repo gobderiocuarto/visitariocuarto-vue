@@ -15,15 +15,34 @@
       />
     </div>
     <div class="row mb-3">
-      <div class="col-6">
-        <h4>Ubicación</h4>
-        <span v-for="(place, index) in service.places.slice(0, 1)" :key="index">
-          {{ place.street }} {{ place.number }}
-        </span>
+      <div class="col-md-6">
+        <div class="detail-info">
+          <h4>Ubicación</h4>
+          <div class="" v-for="(place, index) in service.places" :key="index">
+            <div>{{ place.street }} {{ place.number }}</div>
+          </div>
+        </div>
       </div>
-      <div class="col-6">
-        <h4>Contacto</h4>
-        {{ service.phone }}
+      <div class="col-md-6">
+        <div class="detail-info">
+          <h4>Contacto</h4>
+          <div v-if="service.phone">
+            <a :href="'tel:' + service.phone">{{ service.phone }}</a>
+          </div>
+          <div v-if="service.email">
+            <a :href="'mailto:' + service.email">{{ service.email }}</a>
+          </div>
+          <div v-if="service.web">
+            <div class="detail-info">
+              <a
+                :href="service.web"
+                target="_blank"
+                rel="noopener noreferrer"
+                >{{ service.web }}</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">

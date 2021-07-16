@@ -36,9 +36,21 @@
         </div>
         <div class="col-lg-3 ol-xl-4">
           <recommended-events />
-          <recommended-services msg="donde dormir" />
-          <recommended-services msg="donde comer" />
-          <recommended-services msg="otros servcios" />
+          <recommended-services
+            title="¿Dónde Alojarme?"
+            filter="categories"
+            slug="donde-alojarse"
+          />
+          <recommended-services
+            title="¿Dónde Comer?"
+            filter="categories"
+            slug="donde-comer"
+          />
+          <recommended-services
+            title="Conocé nuestra ciudad"
+            filter="tags"
+            slug="lugares-destacados"
+          />
         </div>
       </div>
     </div>

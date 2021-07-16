@@ -48,7 +48,7 @@ export default {
     getData() {
       Promise.all([api.getEventsHighlights({ url: "" })]).then(([events]) => {
         this.events = events;
-        console.log(events);
+        //console.log(events);
       });
     },
   },

@@ -13,14 +13,26 @@
           <div class="col-md-8">
             <event-detail :event="event" />
             <tags :tags="event.tags" url="/eventos/" class="mb-4" />
-            <related-events />
+            <related-events :category="event.tags[0].slug" />
           </div>
           <div class="col-md-4">
             <event-data :event="event" />
             <recommended-events />
-            <recommended-services msg="donde dormir" />
-            <recommended-services msg="donde comer" />
-            <recommended-services msg="otros servcios" />
+            <recommended-services
+              title="¿Dónde Alojarme?"
+              filter="categories"
+              slug="donde-alojarse"
+            />
+            <recommended-services
+              title="¿Dónde Comer?"
+              filter="categories"
+              slug="donde-comer"
+            />
+            <recommended-services
+              title="Conocé nuestra ciudad"
+              filter="tags"
+              slug="lugares-destacados"
+            />
           </div>
         </div>
       </div>
@@ -53,6 +65,11 @@ export default {
       isLoading: false,
       event: {},
     };
+  },
+  watch: {
+    $route() {
+      this.getData();
+    },
   },
   created() {
     this.getData();
