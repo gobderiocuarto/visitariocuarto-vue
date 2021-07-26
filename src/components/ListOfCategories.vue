@@ -8,14 +8,10 @@
           v-for="(category, index) in categories"
           :key="index"
         >
-          <router-link :to="'/eventos'" v-slot="{ navigate }">
-            <a
-              class="btn btn-block btn-light mb-3 mb-sm-0"
-              @click="navigate"
-              @keypress.enter="navigate"
-              role="link"
-              >{{ category.title }}</a
-            ></router-link
+          <b-link
+            class="btn btn-block btn-light mb-3 mb-sm-0"
+            :to="'/eventos'"
+            >{{ category.title }}</b-link
           >
         </div>
       </div>

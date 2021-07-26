@@ -1,7 +1,6 @@
 <template>
   <div class="detail">
     <h1 class="detail-title">{{ event.title }}</h1>
-    <p class="detail-summary">{{ event.summary }}</p>
     <div v-if="event.image.largeUrl">
       <div v-if="!isLoaded" class="detail-spinner">
         <Spinner />
@@ -15,6 +14,7 @@
         @error="imageError"
       />
     </div>
+    <!-- <p class="detail-summary">{{ event.summary }}</p> -->
 
     <div class="detail-description" v-html="event.description"></div>
   </div>

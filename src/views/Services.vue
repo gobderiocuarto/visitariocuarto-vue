@@ -34,17 +34,17 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3 ol-xl-4">
+        <div class="col-lg-3 col-xl-4">
           <recommended-events />
           <recommended-services
             title="¿Dónde Alojarme?"
             filter="categories"
-            slug="donde-alojarse"
+            slug="alojamiento"
           />
           <recommended-services
             title="¿Dónde Comer?"
             filter="categories"
-            slug="donde-comer"
+            slug="gastronomia"
           />
           <recommended-services
             title="Conocé nuestra ciudad"
@@ -84,7 +84,7 @@ export default {
       query: null,
       total: 0,
       services: {},
-      paginate: 4,
+      paginate: 6,
       page: 1,
       prev: null,
       next: null,

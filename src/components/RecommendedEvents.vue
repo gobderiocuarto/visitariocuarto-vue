@@ -3,11 +3,13 @@
     <h5>Eventos recomendados</h5>
     <spinner v-if="isLoading" />
     <template v-else>
-      <div v-for="(event, index) in events" :key="index">
-        <div>
-          <b-link :to="'/evento/' + event.id + '/' + event.slug">{{
-            event.title
-          }}</b-link>
+      <div class="row">
+        <div
+          class="col-md-6 col-lg-12"
+          v-for="(event, index) in events"
+          :key="index"
+        >
+          <event-card-hightlights :event="event" />
         </div>
       </div>
       <b-link class="btn btn-sm btn-outline-primary mt-3" :to="'/eventos'">
@@ -20,6 +22,7 @@
 <script>
 import api from "@/services/api";
 import Spinner from "./Spinner.vue";
+import EventCardHightlights from "./EventCardHightlights.vue";
 export default {
   name: "RecommendedEvents",
   data() {
@@ -29,7 +32,7 @@ export default {
       paginate: 2,
     };
   },
-  components: { Spinner },
+  components: { Spinner, EventCardHightlights },
   created() {
     this.getData();
   },

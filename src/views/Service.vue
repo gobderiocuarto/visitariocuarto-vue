@@ -16,12 +16,12 @@
             <recommended-services
               title="¿Dónde Alojarme?"
               filter="categories"
-              slug="donde-alojarse"
+              slug="alojamiento"
             />
             <recommended-services
               title="¿Dónde Comer?"
               filter="categories"
-              slug="donde-comer"
+              slug="gastronomia"
             />
             <recommended-services
               title="Conocé nuestra ciudad"

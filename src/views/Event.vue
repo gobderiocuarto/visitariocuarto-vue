@@ -5,33 +5,45 @@
     </template>
     <section class="event">
       <div class="container">
-        <!-- <h1>Evento</h1> -->
         <div v-if="isLoading">
           <Spinner />
         </div>
         <div v-if="!isLoading" class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-8">
+                <event-detail :event="event" />
+              </div>
+              <div class="col-md-4">
+                <event-data :event="event" />
+              </div>
+            </div>
+          </div>
           <div class="col-md-8">
-            <event-detail :event="event" />
+            <!-- <event-detail :event="event" /> -->
             <tags :tags="event.tags" url="/eventos/" class="mb-4" />
             <related-events :category="event.tags[0].slug" />
           </div>
           <div class="col-md-4">
-            <event-data :event="event" />
-            <recommended-events />
+            <!-- <event-data :event="event" /> -->
+            <!-- <recommended-events /> -->
             <recommended-services
               title="¿Dónde Alojarme?"
               filter="categories"
-              slug="donde-alojarse"
+              slug="alojamiento"
+              url="c"
             />
             <recommended-services
               title="¿Dónde Comer?"
               filter="categories"
-              slug="donde-comer"
+              slug="gastronomia"
+              url="c"
             />
             <recommended-services
               title="Conocé nuestra ciudad"
               filter="tags"
               slug="lugares-destacados"
+              url="t"
             />
           </div>
         </div>
@@ -45,7 +57,7 @@ import HeroEventFrame from "../components/HeroEventFrame.vue";
 import EventDetail from "../components/EventDetail.vue";
 import Tags from "../components/Tags.vue";
 import EventData from "../components/EventData.vue";
-import RecommendedEvents from "../components/RecommendedEvents.vue";
+// import RecommendedEvents from "../components/RecommendedEvents.vue";
 import RelatedEvents from "../components/RelatedEvents.vue";
 import RecommendedServices from "../components/RecommendedServices.vue";
 import Spinner from "../components/Spinner.vue";
@@ -56,7 +68,7 @@ export default {
     Tags,
     EventData,
     RecommendedServices,
-    RecommendedEvents,
+    // RecommendedEvents,
     RelatedEvents,
     Spinner,
   },

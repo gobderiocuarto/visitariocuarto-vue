@@ -13,7 +13,7 @@
     >
       <div class="row">
         <div class="col-md-3 col-xl-2">
-          <figure>
+          <figure v-if="service.image">
             <div v-if="!isLoaded" class="card-image center spinner">
               <Spinner />
             </div>
@@ -35,6 +35,15 @@
                 @load="loaded"
                 @error="error"
               />
+            </div>
+          </figure>
+          <figure v-else>
+            <div class="card-image center error" @error="error">
+              <font-awesome-icon icon="image" size="2x" class="card-icon" />
+              <small>imagen no disponible</small>
+              <div>
+                <br />
+              </div>
             </div>
           </figure>
         </div>

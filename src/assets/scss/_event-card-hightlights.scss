@@ -1,0 +1,34 @@
+.event-card-hightlights {
+  cursor: pointer;
+  .card {
+    margin-bottom: 20px;
+    &:hover {
+      box-shadow: 0 0 8px rgba($gray-500, 1);
+    }
+    .card-image {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .card-body {
+      // background-color: orange;
+      text-align: center;
+      .card-title {
+        margin-bottom: 4px;
+        // color: red;
+        color: $primary;
+      }
+      .card-date {
+        // color: blue;
+        margin-bottom: 0px;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+      .card-place {
+        // color: blue;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}

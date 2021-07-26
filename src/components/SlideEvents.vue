@@ -18,24 +18,12 @@
           />
           <div class="carousel-caption">
             <h1>{{ event.title }}</h1>
-            <!-- <router-link
+            <b-link
               class="btn btn-outline-light"
-              :to="'/event/' + event.id + '/' + event.slug"
-              >ver mas</router-link
-            > -->
-            <router-link
               :to="'/evento/' + event.id + '/' + event.slug"
-              custom
-              v-slot="{ navigate }"
             >
-              <span
-                class="btn btn-outline-light"
-                @click="navigate"
-                @keypress.enter="navigate"
-                role="link"
-                >ver más</span
-              >
-            </router-link>
+              ver mas
+            </b-link>
           </div>
         </template>
       </b-carousel-slide>
@@ -60,9 +48,7 @@ export default {
     getData() {
       Promise.all([api.getEventsHighlights({ url: "slider_hero" })]).then(
         ([events]) => {
-          // console.log(events);
           this.events = events;
-          console.log(events);
         }
       );
     },

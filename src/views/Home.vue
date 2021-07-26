@@ -10,16 +10,7 @@
       <h2>próximos eventos</h2>
       <div class="container">
         <list-of-events :events="events" />
-        <router-link to="/eventos" custom v-slot="{ navigate }">
-          <a
-            class="btn btn-primary"
-            @click="navigate"
-            @keypress.enter="navigate"
-            role="link"
-          >
-            ver mas</a
-          ></router-link
-        >
+        <b-link class="btn btn-primary" to="/eventos">ver mas</b-link>
       </div>
     </section>
     <list-of-categories

@@ -53,7 +53,6 @@ export default {
           } else {
             this.isEmpty = true;
           }
-          //console.log(count);
         })
         .finally(() => (this.isLoading = false));
     },

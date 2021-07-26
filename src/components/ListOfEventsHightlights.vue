@@ -11,19 +11,12 @@
               <p class="lead">
                 {{ event.start_date | moment("dddd D [de] MMM YYYY") }}
               </p>
-              <router-link
+              <b-link
+                class="btn btn-primary"
                 :to="`/evento/${event.id}/${event.slug}`"
-                custom
-                v-slot="{ navigate }"
               >
-                <a
-                  class="btn btn-primary"
-                  @click="navigate"
-                  @keypress.enter="navigate"
-                  role="link"
-                  >ver más</a
-                >
-              </router-link>
+                ver mas
+              </b-link>
             </div>
           </div>
         </div>
@@ -48,7 +41,6 @@ export default {
     getData() {
       Promise.all([api.getEventsHighlights({ url: "" })]).then(([events]) => {
         this.events = events;
-        //console.log(events);
       });
     },
   },

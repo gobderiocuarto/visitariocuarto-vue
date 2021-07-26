@@ -12,7 +12,7 @@
       </div>
       <b-link
         class="btn btn-sm btn-outline-primary mt-3"
-        :to="'/servicios/filter?c=' + slug"
+        :to="'/servicios/filter?' + filter.slice(0, 1) + '=' + slug"
       >
         Ver mas
       </b-link>
