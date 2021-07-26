@@ -5,8 +5,6 @@ function getEvents({ paginate = 9, query = null, page = null } = {}) {
     ? `${API_URL}${query}paginate=${paginate}${page}`
     : `${API_URL}/events?paginate=${paginate}${page}`;
 
-  console.log(apiUrl);
-
   return fetch(apiUrl)
     .then((res) => res.json())
     .then((res) => {

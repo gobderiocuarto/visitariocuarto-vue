@@ -30,7 +30,7 @@
               <img
                 v-if="isLoaded || !isError"
                 class="card-image"
-                :src="service.image.mediumUrl"
+                :src="service.image.smallUrl"
                 alt=""
                 @load="loaded"
                 @error="error"

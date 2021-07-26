@@ -111,13 +111,10 @@ export default {
 
       this.query = query;
 
-      // console.log([filterBySearch, filterByTag, filterByCategory]);
-      // console.log(query);
-
       Promise.all([api.getEvents({ paginate: this.paginate, query: query })])
         .then(([events]) => {
           const count = events.data.length;
-          //console.log(count);
+
           this.total = count;
           this.isLoading = false;
           this.hasMore = true;

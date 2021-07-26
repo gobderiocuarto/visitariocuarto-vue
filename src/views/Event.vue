@@ -20,13 +20,10 @@
             </div>
           </div>
           <div class="col-md-8">
-            <!-- <event-detail :event="event" /> -->
             <tags :tags="event.tags" url="/eventos/" class="mb-4" />
             <related-events :category="event.tags[0].slug" />
           </div>
           <div class="col-md-4">
-            <!-- <event-data :event="event" /> -->
-            <!-- <recommended-events /> -->
             <recommended-services
               title="¿Dónde Alojarme?"
               filter="categories"
@@ -57,7 +54,6 @@ import HeroEventFrame from "../components/HeroEventFrame.vue";
 import EventDetail from "../components/EventDetail.vue";
 import Tags from "../components/Tags.vue";
 import EventData from "../components/EventData.vue";
-// import RecommendedEvents from "../components/RecommendedEvents.vue";
 import RelatedEvents from "../components/RelatedEvents.vue";
 import RecommendedServices from "../components/RecommendedServices.vue";
 import Spinner from "../components/Spinner.vue";
@@ -68,7 +64,6 @@ export default {
     Tags,
     EventData,
     RecommendedServices,
-    // RecommendedEvents,
     RelatedEvents,
     Spinner,
   },
@@ -91,12 +86,9 @@ export default {
       const id = this.$route.params.id;
       this.isLoading = true;
 
-      //console.log(id);
-
       Promise.all([api.getEvent(id)])
         .then(([event]) => {
           this.event = event;
-          //console.log(event);
         })
         .finally(() => (this.isLoading = false));
     },
