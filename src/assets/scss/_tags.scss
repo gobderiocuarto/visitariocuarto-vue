@@ -7,7 +7,10 @@
     padding: 3px 8px;
     margin: 0 6px 6px 0;
     font-size: 0.9rem;
+  }
+  &-link {
     &:hover {
+      text-decoration: none;
       background-color: $secondary;
       color: white;
     }

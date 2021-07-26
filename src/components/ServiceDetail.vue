@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <h1 class="detail-title">{{ service.name }}</h1>
-    <div v-if="service.image.largeUrl">
+    <div v-if="service.image">
       <div v-if="!isLoaded" class="detail-spinner">
         <Spinner />
       </div>

@@ -1,15 +1,14 @@
 <template>
   <div class="tags">
     <h5>Etiquetas</h5>
-    <router-link
+    <b-link
+      class="tags-item tags-link"
+      :to="url + 'filter?t=' + tag.slug"
       v-for="(tag, index) in tags"
       :key="index"
-      :to="url + 'filter?t=' + tag.slug"
     >
-      <span class="tags-item">
-        {{ tag.name }}
-      </span>
-    </router-link>
+      {{ tag.name }}
+    </b-link>
   </div>
 </template>
 <script>
