@@ -158,7 +158,13 @@ export default {
       this.isReLoading = true;
       this.page++;
       let url = "&page=" + this.page;
-      Promise.all([api.getServices({ query: this.query, page: url })])
+      Promise.all([
+        api.getServices({
+          query: this.query,
+          paginate: this.paginate,
+          page: url,
+        }),
+      ])
         .then(([services]) => {
           this.next = services.links.next;
           this.services = this.services.concat(services.data);

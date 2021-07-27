@@ -3,27 +3,11 @@
     :to="'/evento/' + event.id + '/' + event.slug"
     :class="event.frame ? 'card event-card card-frame' : 'card event-card'"
   >
-    <div v-if="!isLoaded" class="card-image center spinner">
-      <Spinner />
-    </div>
-    <div v-if="isError">
-      <div class="card-image center error" @error="error">
-        <font-awesome-icon icon="image" size="2x" class="card-icon" />
-        <small>imagen no disponible</small>
-        <div>
-          <br />
-        </div>
-      </div>
+    <div v-if="event.image">
+      <card-image :image="event.image.mediumUrl" />
     </div>
     <div v-else>
-      <img
-        v-if="isLoaded || !isError"
-        class="card-image"
-        :src="event.image.mediumUrl"
-        alt=""
-        @load="loaded"
-        @error="error"
-      />
+      <card-image-not-found iconSize="2x" />
     </div>
     <div class="card-body">
       <div class="card-content">
@@ -67,29 +51,18 @@
   </b-link>
 </template>
 <script>
-import Spinner from "./Spinner.vue";
+import CardImage from "./CardImage.vue";
+import CardImageNotFound from "./CardImageNotFound.vue";
+// import Spinner from "./Spinner.vue";
 export default {
   name: "EventCard",
   components: {
-    Spinner,
+    CardImage,
+    CardImageNotFound,
+    // Spinner,
   },
   props: {
     event: Object,
-  },
-  data() {
-    return {
-      isLoaded: false,
-      isError: false,
-    };
-  },
-  methods: {
-    loaded() {
-      this.isLoaded = true;
-    },
-    error() {
-      this.isLoaded = true;
-      this.isError = true;
-    },
   },
 };
 </script>
