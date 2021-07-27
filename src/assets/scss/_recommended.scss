@@ -1,11 +1,43 @@
 .recommended {
   margin-bottom: 40px;
-  // h5 {
-  //   margin-bottom: 20px;
-  //   padding-bottom: 10px;
-  //   text-transform: uppercase;
-  //   border-bottom: 1px solid rgba($primary, 0.2);
-  //   font-size: 1.1rem;
-  //   letter-spacing: 0.02rem;
-  // }
+  h5 {
+    margin-bottom: 20px;
+    // padding-bottom: 10px;
+    text-transform: uppercase;
+    // border-bottom: 1px solid rgba($primary, 0.2);
+    font-size: 1.1rem;
+    letter-spacing: 0.02rem;
+  }
+  &-event {
+    .card {
+    }
+  }
+  &-service {
+    .card {
+      text-decoration: none;
+      color: $gray-900;
+      .card-title {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+      }
+      .card-category {
+        font-size: 0.8rem;
+        color: $gray-600;
+        svg {
+          margin-right: 6px;
+          color: $cta;
+        }
+        span {
+          color: $gray-900;
+        }
+      }
+      .card-address {
+        font-size: 0.8em;
+        text-transform: uppercase;
+      }
+      .card-phone {
+        font-weight: 500;
+      }
+    }
+  }
 }

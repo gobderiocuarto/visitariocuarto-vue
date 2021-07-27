@@ -1,7 +1,7 @@
 <template>
-  <section class="list-of-events-hightlights">
+  <section v-if="count !== 0" class="list-of-events-hightlights">
     <div class="container">
-      <h2>Eventos Descatados</h2>
+      <h2>Eventos Destacados</h2>
       <div class="row justify-content-center">
         <div class="col-md-4" v-for="(event, index) in events" :key="index">
           <div class="card">
@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       events: [],
+      count: 0,
     };
   },
   components: {},
@@ -39,7 +40,10 @@ export default {
   },
   methods: {
     getData() {
-      Promise.all([api.getEventsHighlights({ url: "" })]).then(([events]) => {
+      Promise.all([
+        api.getEventsHighlights({ url: "slider_eventos_destacados" }),
+      ]).then(([events]) => {
+        this.count = events.length;
         this.events = events;
       });
     },

@@ -1,5 +1,5 @@
 <template>
-  <div class="recommended">
+  <div class="recommended recommended-event">
     <h5>Eventos recomendados</h5>
     <spinner v-if="isLoading" />
     <template v-else>

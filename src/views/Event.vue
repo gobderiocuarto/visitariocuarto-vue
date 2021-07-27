@@ -1,6 +1,6 @@
 <template>
   <main>
-    <template v-if="event.frame">
+    <template v-if="event.frame || event.is_frame">
       <HeroEventFrame :frame="event.frame" />
     </template>
     <section class="event">

@@ -1,14 +1,10 @@
 <template>
-  <div class="recommended">
+  <div class="recommended recommended-service">
     <h5>{{ title }}</h5>
     <spinner v-if="isLoading" />
     <template v-else>
       <div v-for="(service, index) in services" :key="index">
-        <div>
-          <b-link :to="'/servicio/' + service.id + '/' + service.slug">{{
-            service.name
-          }}</b-link>
-        </div>
+        <recommended-service-card :service="service" />
       </div>
       <b-link
         class="btn btn-sm btn-outline-primary mt-3"
@@ -23,8 +19,9 @@
 <script>
 import api from "@/services/api";
 import Spinner from "./Spinner.vue";
+import RecommendedServiceCard from "./RecommendedServiceCard.vue";
 export default {
-  components: { Spinner },
+  components: { Spinner, RecommendedServiceCard },
   name: "RecommendedServices",
   props: {
     title: String,

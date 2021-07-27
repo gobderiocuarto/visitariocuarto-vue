@@ -84,7 +84,7 @@ export default {
       query: null,
       total: 0,
       services: {},
-      paginate: 6,
+      paginate: 9,
       page: 1,
       prev: null,
       next: null,

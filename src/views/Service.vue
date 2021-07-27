@@ -9,7 +9,7 @@
           <div class="col-md-8">
             <service-detail :service="service" />
             <tags :tags="service.tags" url="/servicios/" class="mb-4" />
-            <related-services />
+            <related-services :category="service.category.slug" />
           </div>
           <div class="col-md-4">
             <recommended-events />

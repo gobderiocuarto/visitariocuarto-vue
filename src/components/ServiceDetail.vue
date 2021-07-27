@@ -15,7 +15,7 @@
       />
     </div>
     <div class="row mb-3">
-      <div class="col-md-6">
+      <div class="col-md-5">
         <div class="detail-info">
           <h4>Ubicación</h4>
           <div class="" v-for="(place, index) in service.places" :key="index">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-7">
         <div class="detail-info">
           <h4>Contacto</h4>
           <div v-if="service.phone">
