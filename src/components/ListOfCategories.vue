@@ -10,7 +10,7 @@
         >
           <b-link
             class="btn btn-block btn-light mb-3 mb-sm-0"
-            :to="'/eventos'"
+            :to="category.link"
             >{{ category.title }}</b-link
           >
         </div>

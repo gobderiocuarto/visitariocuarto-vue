@@ -46,30 +46,45 @@ export default {
       categoriesOfEvents: [
         {
           id: 1,
-          title: "categoria 1",
-          slug: "categoria-1",
+          title: "deportes",
+          link: "/eventos/filter?s=deportes",
         },
         {
           id: 2,
-          title: "categoria 2",
-          slug: "categoria-2",
+          title: "cultura",
+          link: "/eventos/filter?s=cultura",
+        },
+        {
+          id: 3,
+          title: "infantiles",
+          link: "/eventos/filter?s=infantiles",
+        },
+        {
+          id: 4,
+          title: "mucho mas",
+          link: "/eventos",
         },
       ],
       categoriesOfServices: [
         {
           id: 1,
-          title: "categoria 1",
-          slug: "categoria-1",
+          title: "alojamiento",
+          link: "/servicios/filter?s=alojamiento",
         },
         {
           id: 2,
-          title: "categoria 2",
-          slug: "categoria-2",
+          title: "gastronomía",
+          link: "/servicios/filter?s=gastronomia",
         },
         {
           id: 3,
-          title: "categoria 3",
-          slug: "categoria-3",
+          title: "esparcimiento",
+          link: "/servicios/filter?s=esparcimiento",
+        },
+        {
+          id: 4,
+          title: "mucho mas",
+          link: "/servicios",
         },
       ],
     };
