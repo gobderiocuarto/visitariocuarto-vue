@@ -9,7 +9,7 @@
           :key="index"
         >
           <b-link
-            class="btn btn-block btn-primary mb-3 mb-sm-0"
+            class="btn btn-block btn-outline-primary mb-3 mb-sm-0"
             :to="category.link"
             >{{ category.title }}</b-link
           >

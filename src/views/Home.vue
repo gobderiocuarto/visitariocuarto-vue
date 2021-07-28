@@ -61,7 +61,7 @@ export default {
         },
         {
           id: 4,
-          title: "mucho mas",
+          title: "mucho más",
           link: "/eventos",
         },
       ],
@@ -83,7 +83,7 @@ export default {
         },
         {
           id: 4,
-          title: "mucho mas",
+          title: "mucho más",
           link: "/servicios",
         },
       ],

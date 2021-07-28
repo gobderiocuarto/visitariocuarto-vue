@@ -1,0 +1,23 @@
+.list-of-events-hightlights {
+  .card {
+    margin-bottom: 30px;
+    .card-image {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .card-body {
+      // background-color: green;
+      height: 200px;
+      .card-title {
+        margin-bottom: 8px;
+      }
+      .card-text {
+        font-size: 1.2rem;
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

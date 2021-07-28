@@ -14,8 +14,6 @@
         @error="imageError"
       />
     </div>
-    <!-- <p class="detail-summary">{{ event.summary }}</p> -->
-
     <div class="detail-description" v-html="event.description"></div>
   </div>
 </template>

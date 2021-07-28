@@ -4,11 +4,7 @@
     <spinner v-if="isLoading" />
     <template v-else>
       <div v-for="(event, index) in events" :key="index">
-        <div>
-          <b-link :to="'/evento/' + event.id + '/' + event.slug">{{
-            event.title
-          }}</b-link>
-        </div>
+        <related-event-card :event="event" />
       </div>
       <b-link
         class="btn btn-sm btn-outline-primary mt-3"
@@ -22,10 +18,12 @@
 <script>
 import api from "@/services/api";
 import Spinner from "./Spinner.vue";
+import RelatedEventCard from "./RelatedEventCard.vue";
 export default {
   name: "RelatedEvents",
   components: {
     Spinner,
+    RelatedEventCard,
   },
   props: {
     category: String,

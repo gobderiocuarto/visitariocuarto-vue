@@ -1,21 +1,23 @@
 <template>
   <section v-if="count !== 0" class="list-of-events-hightlights">
     <div class="container">
-      <h2>Eventos Destacados</h2>
+      <h2>Eventos Recomendados</h2>
       <div class="row justify-content-center">
         <div class="col-md-4" v-for="(event, index) in events" :key="index">
           <div class="card">
-            <img :src="event.image.mediumUrl" alt="" class="card-image" />
+            <b-link :to="`/evento/${event.id}/${event.slug}`">
+              <img :src="event.image.mediumUrl" alt="" class="card-image" />
+            </b-link>
             <div class="card-body">
-              <h5>{{ event.title }}</h5>
-              <p class="lead">
-                {{ event.start_date | moment("dddd D [de] MMM YYYY") }}
+              <h5 class="card-title">{{ event.title }}</h5>
+              <p class="card-text">
+                {{ event.start_date | moment("dddd D [de] MMMM YYYY") }}
               </p>
               <b-link
                 class="btn btn-primary"
                 :to="`/evento/${event.id}/${event.slug}`"
               >
-                ver mas
+                ver más
               </b-link>
             </div>
           </div>
