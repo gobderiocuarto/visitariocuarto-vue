@@ -8,11 +8,12 @@
         <div v-if="isLoading">
           <Spinner />
         </div>
-        <div v-if="!isLoading" class="row">
-          <div class="col-12">
+        <div v-if="!isLoading">
+          <!-- <div class="col-12">
             <div class="row">
               <div class="col-md-8">
                 <event-detail :event="event" />
+                {{ event.description }}
               </div>
               <div class="col-md-4">
                 <event-data :event="event" />
@@ -42,6 +43,43 @@
               slug="lugares-destacados"
               url="t"
             />
+          </div> -->
+          <div class="row">
+            <div class="col-md-8">
+              <div class="detail">
+                <h1 class="detail-title">{{ event.title }}</h1>
+                <image-loader
+                  v-if="event.image"
+                  class="detail-image"
+                  :image="event.image.mediumUrl"
+                />
+              </div>
+              <p class="detail-summary">{{ event.summary }}</p>
+              <div class="detail-description" v-html="event.description"></div>
+              <tags :tags="event.tags" url="/eventos/" class="mb-4" />
+              <related-events :category="event.tags[0].slug" />
+            </div>
+            <div class="col-md-4">
+              <!-- <event-data :event="event" /> -->
+              <recommended-services
+                title="¿Dónde Alojarme?"
+                filter="categories"
+                slug="alojamiento"
+                url="c"
+              />
+              <recommended-services
+                title="¿Dónde Comer?"
+                filter="categories"
+                slug="gastronomia"
+                url="c"
+              />
+              <recommended-services
+                title="Conocé nuestra ciudad"
+                filter="tags"
+                slug="lugares-destacados"
+                url="t"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -51,21 +89,23 @@
 <script>
 import api from "@/services/api";
 import HeroEventFrame from "../components/HeroEventFrame.vue";
-import EventDetail from "../components/EventDetail.vue";
+// import EventDetail from "../components/EventDetail.vue";
+// import EventData from "../components/EventData.vue";
 import Tags from "../components/Tags.vue";
-import EventData from "../components/EventData.vue";
 import RelatedEvents from "../components/RelatedEvents.vue";
 import RecommendedServices from "../components/RecommendedServices.vue";
 import Spinner from "../components/Spinner.vue";
+import ImageLoader from "@/components/ImageLoader.vue";
 export default {
   components: {
     HeroEventFrame,
-    EventDetail,
+    // EventDetail,
+    // EventData,
     Tags,
-    EventData,
-    RecommendedServices,
     RelatedEvents,
+    RecommendedServices,
     Spinner,
+    ImageLoader,
   },
   data() {
     return {
