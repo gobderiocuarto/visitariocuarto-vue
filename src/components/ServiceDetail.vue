@@ -45,7 +45,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div v-if="service.description" class="row">
       <div class="col">
         <h4>Más Información</h4>
         <div class="detail-description" v-html="service.description"></div>

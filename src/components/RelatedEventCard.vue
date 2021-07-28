@@ -8,7 +8,7 @@
     :to="'/evento/' + event.id + '/' + event.slug"
   >
     <div class="row">
-      <div class="col-3">
+      <div class="col-lg-4">
         <div class="card-info">
           <div class="grid-container">
             <div class="card-day">
@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="col-9">
+      <div class="col-lg-8">
         <div class="card-body">
           <div>
             <h4 class="card-title">{{ event.title }}</h4>

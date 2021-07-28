@@ -52,13 +52,13 @@
     .card-image {
       grid-area: image;
       width: 100%;
-      height: 85px;
+      height: 100px;
       object-fit: cover;
       border-radius: 6px;
     }
     .grid-container {
       display: grid;
-      grid-template-columns: 1fr 85px;
+      grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       gap: 4px;
       grid-template-areas:
@@ -68,7 +68,6 @@
   }
   .card-body {
     padding: 0px;
-    //background-color: green;
     height: 100%;
     display: flex;
     align-items: center;
@@ -88,6 +87,57 @@
     .card-frame {
       font-size: 0.8rem;
       color: $gray-800;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card.event-related-card {
+    .card-info {
+      margin-bottom: 16px;
+      .card-image {
+        height: 100px;
+      }
+    }
+    .card-body {
+      .card-date {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 991px) {
+  .card.event-related-card {
+    background-color: green;
+    .card-info {
+      margin-bottom: 16px;
+      .card-image {
+        height: 100px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1259px) {
+  .card.event-related-card {
+    .card-info {
+      .card-image {
+        height: 80px;
+      }
+    }
+    .card-body {
+      .card-date {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1260px) {
+  .card.event-related-card {
+    .card-info {
+      .card-image {
+        height: 100px;
+      }
     }
   }
 }
