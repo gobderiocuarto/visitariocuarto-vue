@@ -2,28 +2,33 @@
   <section>
     <div class="container">
       <h2>Descubrí Nuestra Ciudad</h2>
-
-      <div v-for="(service, index) in services" :key="index">
-        <div>
-          <b-link :to="'/servicio/' + service.id + '/' + service.slug">{{
-            service.name
-          }}</b-link>
+      <div class="row justify-content-center">
+        <div
+          class="col-md-6 col-lg-3"
+          v-for="(service, index) in services"
+          :key="index"
+        >
+          <place-card :service="service" />
         </div>
       </div>
 
       <b-link
-        class="btn btn-sm btn-outline-primary mt-3"
+        class="btn btn-primary mt-3"
         :to="'/servicios/filter?t=lugares-destacados'"
       >
-        Ver mas
+        ver más
       </b-link>
     </div>
   </section>
 </template>
 <script>
 import api from "@/services/api";
+import PlaceCard from "../components/PlaceCard.vue";
 export default {
   name: "ListOfPlacesRecommended",
+  components: {
+    PlaceCard,
+  },
   data() {
     return {
       isLoading: false,

@@ -1,7 +1,7 @@
 <template>
   <div class="list-of-categories">
     <div class="container">
-      <h3>{{ title }}</h3>
+      <h4>{{ title }}</h4>
       <div class="row justify-content-center">
         <div
           class="col-md-2"
@@ -9,7 +9,7 @@
           :key="index"
         >
           <b-link
-            class="btn btn-block btn-light mb-3 mb-sm-0"
+            class="btn btn-block btn-primary mb-3 mb-sm-0"
             :to="category.link"
             >{{ category.title }}</b-link
           >
