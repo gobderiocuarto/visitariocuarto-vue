@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>{{ events.length }}</div>
     <b-carousel
       id="slide-home"
       v-model="slide"
