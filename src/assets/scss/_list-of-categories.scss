@@ -12,6 +12,7 @@
     letter-spacing: 0.04rem;
     font-size: 0.94rem;
     padding: 12px;
+    margin-bottom: 12px;
     border-radius: 2px;
     font-weight: 400;
     border-radius: 4px;
@@ -19,3 +20,10 @@
     box-shadow: 0 0 8px $gray-300;
   }
 }
+
+// @media screen and (max-width: 767px) {
+//   .list-of-categories {
+//     .btn {
+//     }
+//   }
+// }

@@ -1,5 +1,6 @@
 <template>
-  <div class="">
+  <div>
+    <div>{{ events.length }}</div>
     <b-carousel
       id="slide-home"
       v-model="slide"
@@ -18,6 +19,11 @@
           />
           <div class="carousel-caption">
             <h1>{{ event.title }}</h1>
+            <handle-date
+              class="date"
+              :start="event.calendars[0].start_date"
+              :end="event.calendars[0].end_date"
+            />
             <b-link
               class="btn btn-outline-light"
               :to="'/evento/' + event.id + '/' + event.slug"
@@ -32,8 +38,12 @@
 </template>
 <script>
 import api from "@/services/api";
+import HandleDate from "./HandleDate.vue";
 export default {
   name: "SlidesEvents",
+  components: {
+    HandleDate,
+  },
   data() {
     return {
       events: [],

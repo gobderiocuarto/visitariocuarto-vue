@@ -13,7 +13,6 @@
         Ver mas
       </b-link>
     </template>
-    <hr />
   </div>
 </template>
 <script>

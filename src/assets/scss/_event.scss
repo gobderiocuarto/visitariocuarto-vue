@@ -1,10 +1,12 @@
 .event {
   padding: 60px 0;
-  h5 {
-    margin-bottom: 24px;
-    font-size: 1.2rem;
-    letter-spacing: 0.02rem;
-  }
+  // h5 {
+  //   margin-bottom: 24px;
+  //   font-size: 1.2rem;
+  //   letter-spacing: 0.02rem;
+  //   color: $cta;
+  //   text-transform: uppercase;
+  // }
   .detail {
     margin-bottom: 30px;
     &-title {
@@ -47,30 +49,34 @@
   }
   .data {
     margin-bottom: 40px;
+    h5 {
+      text-transform: uppercase;
+      color: $cta;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba($primary, 0.2);
+    }
     .card {
-      border: 0;
-      .card-header {
-        background-color: $secondary;
-        text-transform: uppercase;
-        color: white;
-        font-weight: 500;
-        font-size: 1.2rem;
-      }
+      border: 1px solid $secondary;
+      padding-bottom: 0;
+      background-color: $gray-100;
       .card-body {
-        padding: 0;
+        //padding: 0;
+        padding-bottom: 10px;
         .item {
-          display: flex;
           align-items: center;
           //background-color: pink;
-          padding: 24px 0;
-          border-bottom: 1px solid $gray-200;
-          &:first-child {
-            padding-top: 0;
-          }
-          &:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-          }
+          //border-bottom: 1px solid $gray-200;
+          margin-bottom: 20px;
+
+          display: flex;
+          // &:first-child {
+          //   padding-top: 0;
+          // }
+
+          // &:last-child {
+          //   border-bottom: none;
+          //   padding-bottom: 0;
+          // }
           .icon {
             height: 42px;
             width: 42px;

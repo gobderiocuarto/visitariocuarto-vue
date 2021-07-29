@@ -1,4 +1,5 @@
 <template>
+  <!-- eslind-disabled-next-line -->
   <b-link
     :to="'/evento/' + event.id + '/' + event.slug"
     :class="event.frame ? 'card event-card card-frame' : 'card event-card'"
@@ -18,7 +19,7 @@
               <font-awesome-icon icon="calendar-alt" class="card-icon" />
               <p>{{ event.start_date | moment("dddd D [de] MMM YYYY") }}</p>
             </div>
-            <div class="date-time">
+            <div class="date-time" v-if="event.start_time !== '00:00:00'">
               <font-awesome-icon icon="clock" class="card-icon" />
               <span>{{ event.start_time.slice(0, 5) }}hs</span>
             </div>
@@ -29,13 +30,13 @@
             {{ event.frame.title }}
           </div>
         </div>
-        <div class="content-footer">
+        <div class="content-footer" v-if="event.place">
           <div class="card-place">
             <font-awesome-icon icon="map-marker-alt" class="card-icon" /><span
               >{{ event.place.organization }}</span
             >
           </div>
-          <div class="tags">
+          <div class="tags" v-if="event.tags">
             <div
               class="tags-item tags-sm"
               v-for="(tag, index) in event.tags.slice(0, 2)"

@@ -1,14 +1,9 @@
 <template>
-  <div class="recommended">
+  <div class="related">
     <h5>Tambien te puede interesar</h5>
     <spinner v-if="isLoading" />
     <template v-else>
       <div v-for="(service, index) in services" :key="index">
-        <!-- <div>
-          <b-link :to="'/servicio/' + service.id + '/' + service.slug">{{
-            service.name
-          }}</b-link>
-        </div> -->
         <service-card :service="service" />
       </div>
       <b-link

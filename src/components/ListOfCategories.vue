@@ -4,12 +4,12 @@
       <h4>{{ title }}</h4>
       <div class="row justify-content-center">
         <div
-          class="col-md-2"
+          class="col-12 col-sm-5 col-lg-3 col-xl-2"
           v-for="(category, index) in categories"
           :key="index"
         >
           <b-link
-            class="btn btn-block btn-outline-primary mb-3 mb-sm-0"
+            class="btn btn-block btn-outline-primary"
             :to="category.link"
             >{{ category.title }}</b-link
           >

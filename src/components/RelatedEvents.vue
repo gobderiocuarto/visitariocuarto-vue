@@ -1,5 +1,5 @@
 <template>
-  <div class="recommended">
+  <div class="related">
     <h5>Tambien te puede interesar</h5>
     <spinner v-if="isLoading" />
     <template v-else>

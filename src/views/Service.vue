@@ -8,7 +8,7 @@
         <div v-if="!isLoading" class="row">
           <div class="col-md-8">
             <service-detail :service="service" />
-            <tags :tags="service.tags" url="/servicios/" class="mb-4" />
+            <tags :tags="service.tags" url="/servicios/" />
             <related-services :category="service.category.slug" />
           </div>
           <div class="col-md-4">

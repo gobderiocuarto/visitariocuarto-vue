@@ -12,11 +12,12 @@
           <event-card-hightlights :event="event" />
         </div>
       </div>
-      <b-link class="btn btn-sm btn-outline-primary mt-3" :to="'/eventos'">
-        Ver mas
-      </b-link>
+      <div class="more">
+        <b-link class="btn btn-sm btn-primary" :to="'/eventos'">
+          ver más
+        </b-link>
+      </div>
     </template>
-    <hr />
   </div>
 </template>
 <script>

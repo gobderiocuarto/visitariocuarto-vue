@@ -9,41 +9,6 @@
           <Spinner />
         </div>
         <div v-if="!isLoading">
-          <!-- <div class="col-12">
-            <div class="row">
-              <div class="col-md-8">
-                <event-detail :event="event" />
-                {{ event.description }}
-              </div>
-              <div class="col-md-4">
-                <event-data :event="event" />
-              </div>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <tags :tags="event.tags" url="/eventos/" class="mb-4" />
-            <related-events :category="event.tags[0].slug" />
-          </div>
-          <div class="col-md-4">
-            <recommended-services
-              title="¿Dónde Alojarme?"
-              filter="categories"
-              slug="alojamiento"
-              url="c"
-            />
-            <recommended-services
-              title="¿Dónde Comer?"
-              filter="categories"
-              slug="gastronomia"
-              url="c"
-            />
-            <recommended-services
-              title="Conocé nuestra ciudad"
-              filter="tags"
-              slug="lugares-destacados"
-              url="t"
-            />
-          </div> -->
           <div class="row">
             <div class="col-md-8">
               <div class="detail">
@@ -56,11 +21,11 @@
               </div>
               <p class="detail-summary">{{ event.summary }}</p>
               <div class="detail-description" v-html="event.description"></div>
+              <event-data :event="event" />
               <tags :tags="event.tags" url="/eventos/" class="mb-4" />
               <related-events :category="event.tags[0].slug" />
             </div>
             <div class="col-md-4">
-              <!-- <event-data :event="event" /> -->
               <recommended-services
                 title="¿Dónde Alojarme?"
                 filter="categories"
@@ -90,7 +55,7 @@
 import api from "@/services/api";
 import HeroEventFrame from "../components/HeroEventFrame.vue";
 // import EventDetail from "../components/EventDetail.vue";
-// import EventData from "../components/EventData.vue";
+import EventData from "../components/EventData.vue";
 import Tags from "../components/Tags.vue";
 import RelatedEvents from "../components/RelatedEvents.vue";
 import RecommendedServices from "../components/RecommendedServices.vue";
@@ -100,7 +65,7 @@ export default {
   components: {
     HeroEventFrame,
     // EventDetail,
-    // EventData,
+    EventData,
     Tags,
     RelatedEvents,
     RecommendedServices,

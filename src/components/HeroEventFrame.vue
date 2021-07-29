@@ -3,17 +3,12 @@
     <div
       class="container d-flex align-items-center justify-content-between py-5"
     >
-      <h3>{{ frame.title }}</h3>
-      <!-- <router-link
-        class="btn btn-secondary"
-        :to="'/eventos/filter?f=' + frame.id + '&' + frame.slug"
-        custom
-        v-slot="{ navigate }"
-      >
-        <span @click="navigate" @keypress.enter="navigate" role="link"
-          >Ver</span
-        >
-      </router-link> -->
+      <div>
+        <h3>{{ frame.title }}</h3>
+        <h4>
+          <handle-date :start="frame.start_date" :end="frame.end_date" />
+        </h4>
+      </div>
       <div>
         <b-link
           class="btn btn-secondary ml-2"
@@ -31,7 +26,9 @@
 </template>
 
 <script>
+import HandleDate from "./HandleDate.vue";
 export default {
+  components: { HandleDate },
   name: "HeroEventFrame",
   props: {
     frame: Object,
