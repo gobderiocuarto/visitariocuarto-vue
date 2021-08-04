@@ -23,12 +23,22 @@
               :start="event.calendars[0].start_date"
               :end="event.calendars[0].end_date"
             />
-            <b-link
-              class="btn btn-outline-light"
-              :to="'/evento/' + event.id + '/' + event.slug"
-            >
-              ver mas
-            </b-link>
+            <div v-if="event.is_frame">
+              <b-link
+                class="btn btn-outline-light"
+                :to="'/eventos/filter?f=' + event.id + '&' + event.slug"
+              >
+                ver eventos
+              </b-link>
+            </div>
+            <div v-else>
+              <b-link
+                class="btn btn-outline-light"
+                :to="'/evento/' + event.id + '/' + event.slug"
+              >
+                ver mas
+              </b-link>
+            </div>
           </div>
         </template>
       </b-carousel-slide>
