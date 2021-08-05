@@ -1,7 +1,7 @@
 <template>
   <main>
     <template v-if="event.frame || event.is_frame">
-      <HeroEventFrame :frame="event.frame" />
+      <HeroEventFrame :frame_id="event.frame.id" />
     </template>
     <section class="event">
       <div class="container">
