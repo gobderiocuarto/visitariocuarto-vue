@@ -1,5 +1,8 @@
 <template>
-  <div class="wrapper">
+  <main>
+    <p v-if="$route.query.f || frame_id != null">
+      <hero-event-frame :frame_id="frame_id" />
+    </p>
     <div class="container">
       <h1>Eventos</h1>
       <p v-if="$route.query.s">{{ $route.query.s }}</p>
@@ -30,7 +33,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -38,6 +41,7 @@ import api from "@/services/api";
 import ListOfEvents from "@/components/ListOfEvents";
 import Spinner from "../components/Spinner.vue";
 import SearchEvents from "../components/SearchEvents.vue";
+import HeroEventFrame from "../components/HeroEventFrame.vue";
 export default {
   name: "Events",
 
@@ -45,10 +49,12 @@ export default {
     ListOfEvents,
     Spinner,
     SearchEvents,
+    HeroEventFrame,
   },
 
   data() {
     return {
+      frame_id: null,
       isLoading: false,
       isReLoading: false,
       isEmpty: false,
@@ -76,6 +82,8 @@ export default {
   methods: {
     getData() {
       this.isLoading = true;
+      this.frame_id = this.$route.query.f;
+      //console.log(this.frame_id);
 
       const filterBySearch = this.$route.query.s
         ? `/events?search=${this.$route.query.s}&`
