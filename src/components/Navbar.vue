@@ -1,7 +1,9 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="secondary" sticky>
     <b-container>
-      <b-navbar-brand to="/">VISITÁ RÍO CUARTO</b-navbar-brand>
+      <b-navbar-brand to="/">
+        <logo />
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -46,10 +48,12 @@
 </template>
 <script>
 import SearchEvents from "@/components/SearchEvents.vue";
+import Logo from "@/components/Logo.vue";
 export default {
   name: "Navbar",
   components: {
     SearchEvents,
+    Logo,
   },
   data() {
     return {

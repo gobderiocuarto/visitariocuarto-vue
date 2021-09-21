@@ -3,32 +3,36 @@
     <p v-if="$route.query.f || frame_id != null">
       <hero-event-frame :frame_id="frame_id" />
     </p>
-    <div class="container">
-      <h1>Eventos</h1>
-      <p v-if="$route.query.s">{{ $route.query.s }}</p>
-      <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
-      <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
-      <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
-      <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
-      <p v-else>todos</p>
-      <search-events />
-      <p class="mt-3">total {{ total }} | page: {{ page }}</p>
-      <hr />
-      <div v-if="isLoading" class="text-center"><spinner /></div>
-      <div v-if="!isLoading">
-        <div v-if="isEmpty">no hay eventos</div>
-        <div v-if="!isEmpty">
-          <list-of-events :events="events" />
-          <div v-if="isReLoading"><spinner /></div>
-          <div v-if="!isReLoading" class="text-center">
-            <button
-              v-if="hasMore"
-              class="btn btn-primary"
-              @click="handleScrollInfinite"
-            >
-              ver mas
-            </button>
-            <button v-else class="btn btn-primary" disabled>cargar más</button>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Eventos</h1>
+        <p v-if="$route.query.s">{{ $route.query.s }}</p>
+        <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
+        <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
+        <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
+        <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
+        <p v-else>todos</p>
+        <search-events />
+        <p class="mt-3">total {{ total }} | page: {{ page }}</p>
+        <hr />
+        <div v-if="isLoading" class="text-center"><spinner /></div>
+        <div v-if="!isLoading">
+          <div v-if="isEmpty">no hay eventos</div>
+          <div v-if="!isEmpty">
+            <list-of-events :events="events" />
+            <div v-if="isReLoading"><spinner /></div>
+            <div v-if="!isReLoading" class="text-center">
+              <button
+                v-if="hasMore"
+                class="btn btn-primary"
+                @click="handleScrollInfinite"
+              >
+                ver mas
+              </button>
+              <button v-else class="btn btn-primary" disabled>
+                cargar más
+              </button>
+            </div>
           </div>
         </div>
       </div>

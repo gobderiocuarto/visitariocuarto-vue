@@ -1,60 +1,62 @@
 <template>
-  <div class="wrapper">
-    <div class="container">
-      <h1>Servicios</h1>
-      <p v-if="$route.query.s">{{ $route.query.s }}</p>
-      <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
-      <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
-      <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
-      <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
-      <p v-else>todos</p>
-      <search-services />
-      <p class="mt-3">total {{ total }} | page: {{ page }}</p>
-      <hr />
-      <div class="row">
-        <div class="col-lg-9 col-xl-8">
-          <div v-if="isLoading" class="text-center"><spinner /></div>
-          <div v-if="!isLoading">
-            <div v-if="isEmpty">no hay servicios</div>
-            <div v-if="!isEmpty">
-              <list-of-services :services="services" />
-              <div v-if="isReLoading"><spinner /></div>
-              <div v-if="!isReLoading" class="text-center">
-                <button
-                  v-if="hasMore"
-                  class="btn btn-primary mt-3"
-                  @click="handleScrollInfinite"
-                >
-                  ver mas
-                </button>
-                <button v-else class="btn btn-primary" disabled>
-                  cargar más
-                </button>
+  <main>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Servicios</h1>
+        <p v-if="$route.query.s">{{ $route.query.s }}</p>
+        <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
+        <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
+        <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
+        <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
+        <p v-else>todos</p>
+        <search-services />
+        <p class="mt-3">total {{ total }} | page: {{ page }}</p>
+        <hr />
+        <div class="row">
+          <div class="col-lg-9 col-xl-8">
+            <div v-if="isLoading" class="text-center"><spinner /></div>
+            <div v-if="!isLoading">
+              <div v-if="isEmpty">no hay servicios</div>
+              <div v-if="!isEmpty">
+                <list-of-services :services="services" />
+                <div v-if="isReLoading"><spinner /></div>
+                <div v-if="!isReLoading" class="text-center">
+                  <button
+                    v-if="hasMore"
+                    class="btn btn-primary mt-3"
+                    @click="handleScrollInfinite"
+                  >
+                    ver mas
+                  </button>
+                  <button v-else class="btn btn-primary" disabled>
+                    cargar más
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-3 col-xl-4">
-          <recommended-events />
-          <recommended-services
-            title="¿Dónde Alojarme?"
-            filter="categories"
-            slug="alojamiento"
-          />
-          <recommended-services
-            title="¿Dónde Comer?"
-            filter="categories"
-            slug="gastronomia"
-          />
-          <recommended-services
-            title="Conocé nuestra ciudad"
-            filter="tags"
-            slug="lugares-destacados"
-          />
+          <div class="col-lg-3 col-xl-4">
+            <recommended-events />
+            <recommended-services
+              title="¿Dónde Alojarme?"
+              filter="categories"
+              slug="alojamiento"
+            />
+            <recommended-services
+              title="¿Dónde Comer?"
+              filter="categories"
+              slug="gastronomia"
+            />
+            <recommended-services
+              title="Conocé nuestra ciudad"
+              filter="tags"
+              slug="lugares-destacados"
+            />
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

@@ -8,6 +8,13 @@
   .navbar-brand {
     cursor: pointer;
     font-weight: 500;
+    width: 140px;
+    // background-color: red;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
   .navbar-toggler {
     padding: 0;
