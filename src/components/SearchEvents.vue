@@ -1,14 +1,10 @@
 <template>
-  <b-form inline @submit.prevent="onSubmit">
+  <b-form @submit.prevent="onSubmit" class="search">
     <b-form-input
       v-model="form.query"
-      size="sm"
-      class="mr-sm-2"
       placeholder="Buscá tu evento"
     ></b-form-input>
-    <b-button size="sm" class="my-2 my-sm-0" type="submit" variant="primary"
-      >Buscar</b-button
-    >
+    <b-button type="submit" variant="primary">Buscar</b-button>
   </b-form>
 </template>
 <script>

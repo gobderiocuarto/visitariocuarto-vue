@@ -1,17 +1,17 @@
 <template>
   <main>
-    <div class="wrapper">
+    <div class="header-lists">
       <div class="container">
-        <h1>Servicios</h1>
-        <p v-if="$route.query.s">{{ $route.query.s }}</p>
-        <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
-        <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
-        <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
-        <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
-        <p v-else>todos</p>
-        <search-services />
-        <p class="mt-3">total {{ total }} | page: {{ page }}</p>
-        <hr />
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <h1>Servicios</h1>
+            <search-services />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper pt-0">
+      <div class="container">
         <div class="row">
           <div class="col-lg-9 col-xl-8">
             <div v-if="isLoading" class="text-center"><spinner /></div>

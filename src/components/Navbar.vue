@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="secondary" sticky>
+  <b-navbar toggleable="lg" type="dark" variant="primary" sticky>
     <b-container>
       <b-navbar-brand to="/">
         <logo />

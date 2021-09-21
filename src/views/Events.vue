@@ -1,20 +1,24 @@
 <template>
   <main>
-    <p v-if="$route.query.f || frame_id != null">
-      <hero-event-frame :frame_id="frame_id" />
-    </p>
-    <div class="wrapper">
+    <div
+      :class="[
+        frame_id != null ? 'header-lists header-lists-frame' : 'header-lists',
+      ]"
+    >
       <div class="container">
-        <h1>Eventos</h1>
-        <p v-if="$route.query.s">{{ $route.query.s }}</p>
-        <p v-else-if="$route.query.t">{{ $route.query.t }}</p>
-        <p v-else-if="$route.query.c">{{ $route.query.c }}</p>
-        <p v-else-if="$route.query.d">{{ $route.query.d }}</p>
-        <p v-else-if="$route.query.f">{{ $route.query.f }}</p>
-        <p v-else>todos</p>
-        <search-events />
-        <p class="mt-3">total {{ total }} | page: {{ page }}</p>
-        <hr />
+        <div class="row justify-content-between">
+          <div class="col-md-5">
+            <h1>Eventos</h1>
+            <search-events />
+          </div>
+          <div v-if="$route.query.f || frame_id != null" class="col-md-5">
+            <hero-event-frame :frame_id="frame_id" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper pt-0">
+      <div class="container">
         <div v-if="isLoading" class="text-center"><spinner /></div>
         <div v-if="!isLoading">
           <div v-if="isEmpty">no hay eventos</div>
