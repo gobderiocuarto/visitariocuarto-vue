@@ -50,8 +50,18 @@ export default {
 
       Promise.all([api.getEvents({ paginate: this.paginate, query: query })])
         .then(([events]) => {
-          //console.log(events.data);
-          this.events = events.data;
+          const data = events.data;
+          const id = this.$route.params.id;
+
+          function removeItemById(data, id) {
+            const filter = data.filter((item) => item.id !== id);
+            return filter;
+          }
+          const filter = removeItemById(data, id);
+
+          this.events = filter;
+
+          //this.events = events.data;
         })
         .finally(() => (this.isLoading = false));
     },

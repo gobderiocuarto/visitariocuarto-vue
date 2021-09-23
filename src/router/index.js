@@ -80,7 +80,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log(to);
+  // console.log(to);
   // console.log(from);
   let documentTitle = (document.title = `${process.env.VUE_APP_TITLE}`);
 
