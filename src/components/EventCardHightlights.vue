@@ -1,18 +1,26 @@
 <template>
-  <b-link :to="url">
-    <div class="event-card-hightlights">
-      <div class="card">
-        <img :src="event.image.mediumUrl" alt="" class="card-image" />
-        <div class="card-body">
-          <h5 class="card-title">{{ event.title }}</h5>
-          <p class="card-date">
-            {{ event.start_date | moment("dddd D [de] MMM YYYY") }}
-          </p>
-          <p v-if="event.place" class="card-place">
-            {{ event.place.organization }}
-          </p>
-          <p v-if="event.is_frame">es mframe</p>
-        </div>
+  <b-link
+    :to="{
+      name: 'Event',
+      params: {
+        id: event.id,
+        slug: event.slug,
+        title: event.title,
+      },
+    }"
+    class="event-card-hightlights text-decoration-none"
+  >
+    <div class="card">
+      <img :src="event.image.mediumUrl" alt="" class="card-image" />
+      <div class="card-body">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-date">
+          {{ event.start_date | moment("dddd D [de] MMM YYYY") }}
+        </p>
+        <p v-if="event.place" class="card-place">
+          {{ event.place.organization }}
+        </p>
+        <p v-if="event.is_frame">es mframe</p>
       </div>
     </div>
   </b-link>

@@ -1,7 +1,9 @@
 <template>
-  <!-- eslind-disabled-next-line -->
   <b-link
-    :to="'/evento/' + event.id + '/' + event.slug"
+    :to="{
+      name: 'Event',
+      params: { id: event.id, slug: event.slug, title: event.title },
+    }"
     :class="event.frame ? 'card event-card card-frame' : 'card event-card'"
   >
     <div v-if="event.image">

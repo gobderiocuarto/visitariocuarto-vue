@@ -1,4 +1,4 @@
-const API_URL = "https://admin.visitariocuarto.gob.ar/api/v1";
+const API_URL = process.env.VUE_APP_API;
 
 function getEvents({ paginate = 9, query = null, page = null } = {}) {
   const apiUrl = query

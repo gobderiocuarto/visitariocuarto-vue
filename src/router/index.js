@@ -5,52 +5,67 @@ import Events from "../views/Events.vue";
 import Event from "../views/Event.vue";
 import Services from "../views/Services.vue";
 import Service from "../views/Service.vue";
-import About from "../views/About.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
+    name: "Home",
     component: Home,
+    meta: {
+      title: "Home",
+    },
   },
   // Events Routes
   {
     path: "/eventos",
-    name: "events",
+    name: "Events",
     component: Events,
+    meta: {
+      title: "Eventos",
+    },
   },
   {
     path: "/eventos/filter",
-    name: "eventsFilter",
+    name: "EventsFilter",
     component: Events,
+    meta: {
+      title: "Eventos",
+    },
   },
   {
     path: "/evento/:id/:slug",
-    name: "event",
+    name: "Event",
     component: Event,
+    meta: {
+      title: "Evento",
+    },
   },
   // Services Routes
   {
     path: "/servicios",
-    name: "services",
+    name: "Services",
     component: Services,
+    meta: {
+      title: "Servicios",
+    },
   },
   {
     path: "/servicios/filter",
-    name: "servicesFilter",
+    name: "ServicesFilter",
     component: Services,
+    meta: {
+      title: "Servicios",
+    },
   },
   {
     path: "/servicio/:id/:slug",
-    name: "service",
+    name: "Service",
     component: Service,
-  },
-  {
-    path: "/about",
-    name: "about",
-    component: About,
+    meta: {
+      title: "Servicio",
+    },
   },
 ];
 
@@ -62,6 +77,22 @@ const router = new VueRouter({
   scrollBehavior() {
     return { x: 0, y: 0 };
   },
+});
+
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  // console.log(from);
+  let documentTitle = (document.title = `${process.env.VUE_APP_TITLE}`);
+
+  if (to.meta.title) {
+    documentTitle += ` | ${to.meta.title}`;
+  }
+
+  if (to.params.title) {
+    documentTitle += ` | ${to.params.title}`;
+  }
+  document.title = documentTitle;
+  next();
 });
 
 export default router;

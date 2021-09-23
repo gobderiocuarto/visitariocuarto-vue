@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="primary" sticky>
+  <b-navbar toggleable="lg" type="dark" sticky>
     <b-container>
       <b-navbar-brand to="/">
         <logo />
@@ -40,7 +40,7 @@
 
           <b-nav-item class="nav-item" to="/servicios">Servicios</b-nav-item>
 
-          <SearchEvents />
+          <SearchEvents class="ml-sm-3" />
         </b-navbar-nav>
       </b-collapse>
     </b-container>

@@ -1,7 +1,10 @@
 <template>
   <b-link
     class="card mb-2"
-    :to="'/servicio/' + service.id + '/' + service.slug"
+    :to="{
+      name: 'Service',
+      params: { id: service.id, slug: service.slug, title: service.name },
+    }"
   >
     <div class="card-body">
       <h4 class="card-title">{{ service.name }}</h4>
