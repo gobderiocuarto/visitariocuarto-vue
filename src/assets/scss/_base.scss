@@ -3,7 +3,8 @@ html {
   min-height: 100vh;
 }
 body {
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 main {
@@ -16,4 +17,10 @@ main {
 
 section {
   padding: 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin-bottom: 140px;
+  }
 }

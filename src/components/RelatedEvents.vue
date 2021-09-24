@@ -1,5 +1,5 @@
 <template>
-  <div class="related">
+  <div v-if="showEvents" class="related">
     <h5>Tambien te puede interesar</h5>
     <spinner v-if="isLoading" />
     <template v-else>
@@ -32,6 +32,7 @@ export default {
     return {
       isLoading: false,
       events: [],
+      showEvents: false,
       paginate: 4,
       query: null,
     };
@@ -42,11 +43,8 @@ export default {
   methods: {
     getData() {
       this.isLoading = true;
-      // console.log(this.category);
 
       const query = this.category ? `/events/tags/${this.category}?` : null;
-
-      // console.log(query);
 
       Promise.all([api.getEvents({ paginate: this.paginate, query: query })])
         .then(([events]) => {
@@ -58,6 +56,12 @@ export default {
             return filter;
           }
           const filter = removeItemById(data, id);
+
+          console.log(filter.length);
+
+          // if (filter.length !== 0) {
+          //   this.showEvents = true;
+          // }
 
           this.events = filter;
 
