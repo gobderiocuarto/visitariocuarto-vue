@@ -35,7 +35,18 @@
               </div>
               <div class="info">
                 <h6>donde</h6>
-                <p>{{ event.place.organization }}</p>
+                <router-link
+                  :to="{
+                    name: 'Service',
+                    params: {
+                      id: event.place.organization_id,
+                      slug: event.place.slug,
+                      title: event.place.organization,
+                    },
+                  }"
+                >
+                  {{ event.place.organization }}
+                </router-link>
               </div>
             </div>
           </div>

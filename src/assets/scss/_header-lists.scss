@@ -1,0 +1,26 @@
+.header-lists {
+  padding: 40px 0;
+  margin-bottom: 30px;
+  background-color: $gray-200;
+  // background: rgb(122, 186, 226);
+  // background: linear-gradient(
+  //   180deg,
+  //   rgba(122, 186, 226, 1) 0%,
+  //   rgba(66, 163, 223, 1) 100%
+  // );
+  &.header-lists-frame {
+    color: white;
+    // background-color: $gray-400;
+    //border-bottom: 4px solid rgba($secondary, 0.4);
+    background: rgb(75, 166, 222);
+    background: linear-gradient(
+      180deg,
+      rgba(75, 166, 222, 1) 0%,
+      rgba(0, 63, 162, 1) 100%
+    );
+  }
+}
+@media screen and (max-width: 767) {
+  .header-lists {
+  }
+}

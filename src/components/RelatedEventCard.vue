@@ -1,11 +1,18 @@
 <template>
   <b-link
+    :to="{
+      name: 'Event',
+      params: {
+        id: event.id,
+        slug: event.slug,
+        title: event.title,
+      },
+    }"
     :class="
       event.frame
         ? 'card event-related-card card-is-frame'
         : 'card event-related-card'
     "
-    :to="'/evento/' + event.id + '/' + event.slug"
   >
     <div class="row">
       <div class="col-lg-4">

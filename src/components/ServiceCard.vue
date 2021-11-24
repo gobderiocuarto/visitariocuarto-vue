@@ -1,6 +1,9 @@
 <template>
   <router-link
-    :to="'/servicio/' + service.id + '/' + service.slug"
+    :to="{
+      name: 'Service',
+      params: { id: service.id, slug: service.slug, title: service.name },
+    }"
     tag="a"
     v-slot="{ href, navigate }"
   >

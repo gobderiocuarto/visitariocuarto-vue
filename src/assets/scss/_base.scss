@@ -3,14 +3,24 @@ html {
   min-height: 100vh;
 }
 body {
-  // background-color: $secondary;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  margin-bottom: 200px;
+}
+
+main {
+  // background-color: red;
 }
 
 .wrapper {
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 section {
   padding: 60px 0;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin-bottom: 140px;
+  }
 }

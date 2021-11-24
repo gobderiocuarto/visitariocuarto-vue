@@ -1,13 +1,23 @@
 .navbar {
-  //background-color: red;
-  //background-color: $secondary;
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 0 0 4px rgba(#000, 0.1);
   font-family: "Univia", sans-serif;
+  background: -webkit-linear-gradient(top left, #003fa2, #4ca6de);
+  background: -moz-linear-gradient(top left, #003fa2, #4ca6de);
+  background: linear-gradient(to bottom right, #003fa2, #4ca6de);
+  // background: $brand-primary;
+  // background: $brand-secondary;
   .navbar-brand {
     cursor: pointer;
     font-weight: 500;
+    width: 160px;
+    // background-color: red;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
   .navbar-toggler {
     padding: 0;

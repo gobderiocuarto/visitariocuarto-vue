@@ -19,6 +19,7 @@
 import api from "@/services/api";
 import Spinner from "./Spinner.vue";
 import ServiceCard from "./ServiceCard.vue";
+
 export default {
   name: "RelatedServices",
   components: {
@@ -32,7 +33,7 @@ export default {
     return {
       isLoading: false,
       services: [],
-      paginate: 4,
+      paginate: 5,
       query: null,
     };
   },
@@ -42,17 +43,22 @@ export default {
   methods: {
     getData() {
       this.isLoading = true;
-      // console.log(this.category);
-
       const query = this.category
         ? `/services/categories/${this.category}?`
         : null;
 
-      // console.log(query);
-
       Promise.all([api.getServices({ paginate: this.paginate, query: query })])
         .then(([services]) => {
-          this.services = services.data;
+          const data = services.data;
+          const id = this.$route.params.id;
+
+          function removeItemById(data, id) {
+            const filter = data.filter((item) => item.id !== id);
+            return filter;
+          }
+          const filter = removeItemById(data, id);
+
+          this.services = filter;
         })
         .finally(() => (this.isLoading = false));
     },

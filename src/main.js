@@ -4,6 +4,12 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import "./assets/scss/styles.scss";
+import VueGtm from "@gtm-support/vue2-gtm";
+import "@fortawesome/fontawesome-free/js/all";
+
+Vue.use(VueGtm, {
+  id: "GTM-MQ4GWT3",
+});
 
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 Vue.use(BootstrapVue);

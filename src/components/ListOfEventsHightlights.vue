@@ -5,7 +5,16 @@
       <div class="row justify-content-center">
         <div class="col-md-4" v-for="(event, index) in events" :key="index">
           <div class="card">
-            <b-link :to="`/evento/${event.id}/${event.slug}`">
+            <b-link
+              :to="{
+                name: 'Event',
+                params: {
+                  id: event.id,
+                  slug: event.slug,
+                  title: event.title,
+                },
+              }"
+            >
               <img :src="event.image.mediumUrl" alt="" class="card-image" />
             </b-link>
             <div class="card-body">
@@ -15,7 +24,14 @@
               </p>
               <b-link
                 class="btn btn-primary"
-                :to="`/evento/${event.id}/${event.slug}`"
+                :to="{
+                  name: 'Event',
+                  params: {
+                    id: event.id,
+                    slug: event.slug,
+                    title: event.title,
+                  },
+                }"
               >
                 ver más
               </b-link>

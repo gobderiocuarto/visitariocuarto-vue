@@ -34,7 +34,14 @@
             <div v-else>
               <b-link
                 class="btn btn-outline-light"
-                :to="'/evento/' + event.id + '/' + event.slug"
+                :to="{
+                  name: 'Event',
+                  params: {
+                    id: event.id,
+                    slug: event.slug,
+                    title: event.title,
+                  },
+                }"
               >
                 ver mas
               </b-link>
