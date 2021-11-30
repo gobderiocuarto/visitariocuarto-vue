@@ -18,7 +18,14 @@
               <img :src="event.image.mediumUrl" alt="" class="card-image" />
             </b-link>
             <div class="card-body">
-              <h5 class="card-title">{{ event.title }}</h5>
+              <h5 class="card-title text-uppercase">{{ event.title }}</h5>
+              <div class="card-title">
+                <handle-date
+                  class="card-date"
+                  :start="event.calendars[0].start_date"
+                  :end="event.calendars[0].end_date"
+                />
+              </div>
               <p class="card-text">
                 {{ event.start_date | moment("dddd D [de] MMMM YYYY") }}
               </p>
@@ -44,6 +51,7 @@
 </template>
 <script>
 import api from "@/services/api";
+import HandleDate from "./HandleDate.vue";
 export default {
   name: "ListOfEventsHightlights",
   data() {
@@ -52,7 +60,9 @@ export default {
       count: 0,
     };
   },
-  components: {},
+  components: {
+    HandleDate,
+  },
   created() {
     this.getData();
   },

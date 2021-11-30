@@ -1,13 +1,14 @@
 .header-lists {
   padding: 40px 0;
   margin-bottom: 30px;
-  background-color: $gray-200;
+  // background-color: $gray-200;
   // background: rgb(122, 186, 226);
   // background: linear-gradient(
   //   180deg,
   //   rgba(122, 186, 226, 1) 0%,
   //   rgba(66, 163, 223, 1) 100%
   // );
+  background-image: url("/img/bg-gray.png");
   &.header-lists-frame {
     color: white;
     // background-color: $gray-400;

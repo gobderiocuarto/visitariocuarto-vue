@@ -12,6 +12,10 @@
       .card-title {
         margin-bottom: 8px;
       }
+      .card-date {
+        text-transform: uppercase;
+        color: $gray-600;
+      }
       .card-text {
         font-size: 1.2rem;
         &::first-letter {
