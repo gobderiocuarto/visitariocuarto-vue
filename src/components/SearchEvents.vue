@@ -4,7 +4,7 @@
       v-model="form.query"
       placeholder="Buscá tu evento"
     ></b-form-input>
-    <b-button type="submit" variant="secondary">Buscar</b-button>
+    <b-button type="submit" variant="primary">Buscar</b-button>
   </b-form>
 </template>
 <script>
