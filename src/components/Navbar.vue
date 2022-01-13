@@ -18,15 +18,6 @@
             >
           </b-nav-item-dropdown>
 
-          <b-nav-item-dropdown text="Donde">
-            <b-dropdown-item
-              v-for="(item, index) in donde"
-              :key="index"
-              :to="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
-          </b-nav-item-dropdown>
-
           <b-nav-item-dropdown text="Cuando">
             <b-dropdown-item
               v-for="(item, index) in cuando"
