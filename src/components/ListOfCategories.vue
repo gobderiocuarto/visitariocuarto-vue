@@ -4,15 +4,17 @@
       <h4>{{ title }}</h4>
       <div class="row justify-content-center">
         <div
-          class="col-12 col-sm-5 col-lg-3 col-xl-2"
+          class="col-12 col-sm-6 col-lg-3"
           v-for="(category, index) in categories"
           :key="index"
         >
-          <b-link
-            class="btn btn-block btn-outline-primary"
-            :to="category.link"
-            >{{ category.title }}</b-link
-          >
+          <b-link class="btn btn-block btn-outline-dark" :to="category.link">
+            {{ category.title }}
+            <i
+              class="fas fa-fw fa-lg fa-home"
+              :class="category.icon && category.icon"
+            ></i>
+          </b-link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <b-carousel
       id="slide-home"
       v-model="slide"
@@ -33,7 +33,7 @@
             </div>
             <div v-else>
               <b-link
-                class="btn btn-outline-light"
+                class="btn btn-sm btn-outline-light text-uppercase"
                 :to="{
                   name: 'Event',
                   params: {
@@ -43,7 +43,7 @@
                   },
                 }"
               >
-                ver mas
+                ver más
               </b-link>
             </div>
           </div>
