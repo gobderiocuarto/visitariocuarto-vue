@@ -9,7 +9,7 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Qué">
+          <b-nav-item-dropdown text="Qué Hacer">
             <b-dropdown-item
               v-for="(item, index) in que"
               :key="index"
@@ -124,6 +124,11 @@ export default {
           title: "Este mes ",
           path: "/eventos/filter?d=month",
           slug: "month",
+        },
+        {
+          title: "Todos",
+          path: "/eventos",
+          slug: "",
         },
       ],
     };

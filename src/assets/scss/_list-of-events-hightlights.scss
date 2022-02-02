@@ -7,21 +7,31 @@
       object-fit: cover;
     }
     .card-body {
-      // background-color: green;
       height: 200px;
       .card-title {
-        margin-bottom: 8px;
+        margin-bottom: 4px;
+        font-weight: 700;
+        color: $primary;
+        font-size: 1.4rem;
+        letter-spacing: -0.02rem;
       }
       .card-date {
-        text-transform: uppercase;
-        color: $gray-600;
-      }
-      .card-text {
-        font-size: 1.2rem;
-        &::first-letter {
+        color: $gray-800;
+        font-weight: 400;
+        font-size: 1.1rem;
+        letter-spacing: -0.02rem;
+        margin-bottom: 16px;
+        span {
+          // color: $gray-900;
           text-transform: uppercase;
         }
       }
+      // .card-text {
+      //   font-size: 1.2rem;
+      //   &::first-letter {
+      //     text-transform: uppercase;
+      //   }
+      // }
     }
   }
 }

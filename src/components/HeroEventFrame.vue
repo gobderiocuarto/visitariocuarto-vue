@@ -1,13 +1,14 @@
 <template>
   <div class="hero-event-frame">
-    <div class="">
+    <div class="hero-event-frame-body" :class="listEvent && 'isList'">
       <h3>{{ frame.title }}</h3>
       <h4>
         <handle-date :start="frame.start_date" :end="frame.end_date" />
       </h4>
+    </div>
+    <div v-if="pathName === 'Event'" class="hero-event-frame-cta">
       <b-link
-        v-if="pathName === 'event'"
-        class="btn btn-secondary"
+        class="btn btn-secondary m-0"
         :to="'/eventos/filter?f=' + frame.id + '&' + frame.slug"
         >ver eventos</b-link
       >
@@ -30,6 +31,7 @@ export default {
       isLoading: false,
       frame: {},
       pathName: null,
+      listEvent: false,
     };
   },
   created() {
@@ -38,6 +40,9 @@ export default {
   methods: {
     getData() {
       this.pathName = this.$route.name;
+      if (this.pathName === "EventsFilter") {
+        this.listEvent = true;
+      }
       Promise.all([api.getEvent(this.frame_id)])
         .then(([event]) => {
           this.frame = event;

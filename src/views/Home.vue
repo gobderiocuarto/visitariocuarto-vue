@@ -47,21 +47,25 @@ export default {
         {
           id: 1,
           title: "deportes",
+          icon: "fa-running",
           link: "/eventos/filter?s=deportes",
         },
         {
           id: 2,
           title: "cultura",
+          icon: "fa-theater-masks",
           link: "/eventos/filter?s=cultura",
         },
         {
           id: 3,
           title: "infantiles",
+          icon: "fa-child",
           link: "/eventos/filter?s=infantiles",
         },
         {
           id: 4,
           title: "mucho más",
+          icon: "fa-plus",
           link: "/eventos",
         },
       ],
@@ -69,21 +73,25 @@ export default {
         {
           id: 1,
           title: "alojamiento",
+          icon: "fa-hotel",
           link: "/servicios/filter?s=alojamiento",
         },
         {
           id: 2,
           title: "gastronomía",
+          icon: "fa-utensils",
           link: "/servicios/filter?s=gastronomia",
         },
         {
           id: 3,
           title: "esparcimiento",
+          icon: "fa-glass-cheers",
           link: "/servicios/filter?s=esparcimiento",
         },
         {
           id: 4,
           title: "mucho más",
+          icon: "fa-plus",
           link: "/servicios",
         },
       ],

@@ -3,7 +3,11 @@
     <div class="container">
       <h2>Eventos Recomendados</h2>
       <div class="row justify-content-center">
-        <div class="col-md-4" v-for="(event, index) in events" :key="index">
+        <div
+          class="col-md-6 col-lg-4"
+          v-for="(event, index) in events"
+          :key="index"
+        >
           <div class="card">
             <b-link
               :to="{
@@ -26,11 +30,11 @@
                   :end="event.calendars[0].end_date"
                 />
               </div>
-              <p class="card-text">
+              <!-- <p class="card-text">
                 {{ event.start_date | moment("dddd D [de] MMMM YYYY") }}
-              </p>
+              </p> -->
               <b-link
-                class="btn btn-primary"
+                class="btn btn-sm btn-primary text-uppercase"
                 :to="{
                   name: 'Event',
                   params: {

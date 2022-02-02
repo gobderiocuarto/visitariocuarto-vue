@@ -57,15 +57,12 @@ export default {
           }
           const filter = removeItemById(data, id);
 
-          console.log(filter.length);
-
-          // if (filter.length !== 0) {
-          //   this.showEvents = true;
-          // }
-
-          this.events = filter;
-
-          //this.events = events.data;
+          if (filter.length !== 0) {
+            this.showEvents = true;
+            this.events = filter;
+          } else {
+            this.events = data;
+          }
         })
         .finally(() => (this.isLoading = false));
     },
