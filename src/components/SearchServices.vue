@@ -2,7 +2,7 @@
   <b-form @submit.prevent="onSubmit" class="search">
     <b-form-input
       v-model="form.query"
-      placeholder="Qué servicio estas buscando?"
+      placeholder="Buscá alojamientos, restaurantes, etc..."
     ></b-form-input>
     <b-button type="submit" variant="primary">Buscar</b-button>
   </b-form>

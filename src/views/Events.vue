@@ -9,7 +9,7 @@
         <div class="row justify-content-between">
           <div class="col-md-5">
             <h1>Eventos</h1>
-            <search-events />
+            <search-events :frame_id="frame_id" />
           </div>
           <div v-if="$route.query.f || frame_id != null" class="col-md-5">
             <hero-event-frame :frame_id="frame_id" />

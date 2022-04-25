@@ -16,12 +16,12 @@
           <div class="row">
             <div class="col-md-8">
               <div class="detail">
-                <h1 class="detail-title">{{ event.title }}</h1>
                 <image-loader
                   v-if="event.image"
                   class="detail-image"
                   :image="event.image.mediumUrl"
                 />
+                <h1 class="detail-title">{{ event.title }}</h1>
               </div>
               <p class="detail-summary">{{ event.summary }}</p>
               <div class="detail-description" v-html="event.description"></div>
@@ -58,7 +58,6 @@
 <script>
 import api from "@/services/api";
 import HeroEventFrame from "../components/HeroEventFrame.vue";
-// import EventDetail from "../components/EventDetail.vue";
 import EventData from "../components/EventData.vue";
 import Tags from "../components/Tags.vue";
 import RelatedEvents from "../components/RelatedEvents.vue";
@@ -68,7 +67,6 @@ import ImageLoader from "@/components/ImageLoader.vue";
 export default {
   components: {
     HeroEventFrame,
-    // EventDetail,
     EventData,
     Tags,
     RelatedEvents,
