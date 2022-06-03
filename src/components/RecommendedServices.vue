@@ -54,7 +54,13 @@ export default {
 
       //console.log(query);
 
-      Promise.all([api.getServices({ paginate: this.paginate, query: query })])
+      Promise.all([
+        api.getServices({
+          paginate: this.paginate,
+          query: query,
+          order_by: "random",
+        }),
+      ])
         .then(([services]) => {
           const count = services.data.length;
           this.isLoading = false;
