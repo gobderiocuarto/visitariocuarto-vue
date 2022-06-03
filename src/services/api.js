@@ -27,10 +27,15 @@ function getEventsHighlights({ paginate = 4, url = null } = {}) {
       return res.data;
     });
 }
-function getServices({ paginate = 4, query = null, page = "" } = {}) {
+function getServices({
+  paginate = 4,
+  query = null,
+  page = "",
+  order_by = "name",
+} = {}) {
   const apiUrl = query
-    ? `${API_URL}${query}paginate=${paginate}${page}`
-    : `${API_URL}/services?paginate=${paginate}${page}`;
+    ? `${API_URL}${query}paginate=${paginate}${page}&order_by=${order_by}`
+    : `${API_URL}/services?paginate=${paginate}${page}&order_by=${order_by}`;
 
   return fetch(apiUrl)
     .then((res) => res.json())
