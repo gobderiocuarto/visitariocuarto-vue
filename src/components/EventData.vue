@@ -58,9 +58,7 @@
               <div class="info">
                 <h6>dirección</h6>
                 <p>
-                  <span>{{ event.place.street }}</span>
-                  {{ event.place.number }}.
-                  {{ event.place.city.name }}
+                  <span>{{ event.place.address }}</span>
                 </p>
               </div>
             </div>

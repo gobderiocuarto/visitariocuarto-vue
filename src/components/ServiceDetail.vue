@@ -19,7 +19,7 @@
         <div class="detail-info">
           <h4>Ubicación</h4>
           <div class="" v-for="(place, index) in service.places" :key="index">
-            <div>{{ place.street }} {{ place.number }}</div>
+            <div>{{ place.address }}</div>
           </div>
         </div>
       </div>
