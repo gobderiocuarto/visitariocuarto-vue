@@ -84,7 +84,7 @@
                 /><span
                   v-for="(place, index) in service.places.slice(0, 1)"
                   :key="index"
-                  >{{ place.street }} {{ place.number }}</span
+                  >{{ place.address }}</span
                 >
               </div>
             </div>

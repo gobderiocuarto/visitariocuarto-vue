@@ -17,7 +17,7 @@
         v-for="(place, index) in service.places"
         :key="index"
       >
-        {{ place.street }} {{ place.number }}
+        {{ place.address }}
       </div>
       <div class="card-phone">{{ service.phone }}</div>
     </div>
