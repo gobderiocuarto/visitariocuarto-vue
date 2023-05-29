@@ -27,9 +27,19 @@
             >
           </b-nav-item-dropdown>
 
-          <b-nav-item class="nav-item" to="/eventos">Eventos</b-nav-item>
+          <b-nav-item to="/eventos">Eventos</b-nav-item>
 
-          <b-nav-item class="nav-item" to="/servicios">Servicios</b-nav-item>
+          <b-nav-item to="/servicios">Servicios</b-nav-item>
+
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://calendario.destinoriocuarto.gob.ar/"
+              target="_blank"
+            >
+              Calendario
+            </a>
+          </li>
 
           <SearchEvents class="ml-sm-3" />
         </b-navbar-nav>
