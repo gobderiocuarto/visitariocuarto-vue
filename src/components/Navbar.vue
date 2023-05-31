@@ -1,50 +1,50 @@
 <template>
   <b-navbar toggleable="lg" type="dark" sticky>
-    <b-container>
-      <b-navbar-brand to="/">
-        <logo />
-      </b-navbar-brand>
+    <b-navbar-brand to="/">
+      <logo />
+    </b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown text="Qué Hacer">
-            <b-dropdown-item
-              v-for="(item, index) in que"
-              :key="index"
-              :to="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
-          </b-nav-item-dropdown>
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav class="ml-auto">
+        <b-nav-item-dropdown text="Qué Hacer">
+          <b-dropdown-item
+            v-for="(item, index) in que"
+            :key="index"
+            :to="item.path"
+            >{{ item.title }}</b-dropdown-item
+          >
+        </b-nav-item-dropdown>
 
-          <b-nav-item-dropdown text="Cuando">
-            <b-dropdown-item
-              v-for="(item, index) in cuando"
-              :key="index"
-              :to="item.path"
-              >{{ item.title }}</b-dropdown-item
-            >
-          </b-nav-item-dropdown>
+        <b-nav-item-dropdown text="Cuando">
+          <b-dropdown-item
+            v-for="(item, index) in cuando"
+            :key="index"
+            :to="item.path"
+            >{{ item.title }}</b-dropdown-item
+          >
+        </b-nav-item-dropdown>
 
-          <b-nav-item to="/eventos">Eventos</b-nav-item>
+        <b-nav-item to="/eventos">Eventos</b-nav-item>
 
-          <b-nav-item to="/servicios">Servicios</b-nav-item>
+        <b-nav-item to="/servicios">Servicios</b-nav-item>
 
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://calendario.destinoriocuarto.gob.ar/"
-              target="_blank"
-            >
-              Calendario
-            </a>
-          </li>
+        <b-nav-item to="/comercios-notables">Comercios Notables</b-nav-item>
 
-          <SearchEvents class="ml-sm-3" />
-        </b-navbar-nav>
-      </b-collapse>
-    </b-container>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://calendario.destinoriocuarto.gob.ar/"
+            target="_blank"
+          >
+            Calendario
+          </a>
+        </li>
+
+        <SearchEvents class="ml-sm-3" />
+      </b-navbar-nav>
+    </b-collapse>
   </b-navbar>
 </template>
 <script>

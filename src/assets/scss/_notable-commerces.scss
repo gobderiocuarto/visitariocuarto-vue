@@ -1,0 +1,136 @@
+.notable-commerces {
+  .hero {
+    margin-bottom: 40px;
+    position: relative;
+
+    &-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    &-logo {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 150px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 100px;
+        padding: 4px;
+      }
+    }
+  }
+
+  &-description {
+    padding: 30px 0;
+    margin-bottom: 30px;
+  }
+
+  &-list {
+
+    .card {
+      cursor: pointer;
+      text-align: left;
+      text-decoration: none;
+      color: $gray-800;
+      margin-bottom: 30px;
+      position: relative;
+      border-radius: 4px;
+      border: 1px solid rgba($primary, 0.1);
+
+      .card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px 4px 0 0;
+        background-color: rgba($secondary, 0.06);
+
+        &.center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          flex-direction: column;
+          padding-bottom: 40px;
+        }
+
+        &.spinner {
+          .lds-ellipsis {
+            transform: scale(50%);
+          }
+        }
+
+        &.error {
+          color: rgba($secondary, 0.5);
+          padding-bottom: 30px;
+        }
+      }
+
+      .card-body {
+        height: 160px;
+
+        .card-title {
+          color: blue;
+        }
+
+        .card-text {
+          margin-bottom: 0;
+        }
+
+        .card-test {
+          margin-bottom: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+      }
+    }
+  }
+
+  &-detail {
+
+    .image {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      margin-bottom: 30px;
+      background-color: $gray-100;
+
+      &.not-found {
+        opacity: 0.6;
+      }
+    }
+
+    .spinner {
+      width: 100%;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .lds-ellipsis {
+        transform: scale(50%);
+      }
+    }
+
+    .summary {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 20px;
+    }
+
+    .video {}
+  }
+}
