@@ -22,9 +22,11 @@
         {{ service.summary }}
       </p>
       <p v-else class="card-test text-danger">No hay <b>resúmen</b> cargado</p>
-      <p v-if="service.description" class="card-test text-success">
-        {{ service.description }}
-      </p>
+      <p
+        v-if="service.description"
+        v-html="service.description"
+        class="card-test text-success"
+      ></p>
       <p v-else class="card-test text-danger">
         No hay <b>descripción</b> cargada
       </p>

@@ -8,7 +8,7 @@
       <div v-if="!isLoading" class="row justify-content-between">
         <div class="col-md-8">
           <h1>{{ service.name }}</h1>
-          <div class="summary text-danger">No hay resúmen cargado</div>
+          <div class="summary">{{ service.summary }}</div>
 
           <div v-if="service.image">
             <div v-if="!isLoaded" class="spinner">
@@ -31,7 +31,7 @@
           ></div>
           <p class="text-danger" v-else>No hay descripcion cargada</p>
 
-          <gallery-carousel />
+          <gallery-carousel :images="service.gallery_images" />
 
           <b-link
             class="btn btn-sm btn-primary mt-3"
@@ -47,7 +47,7 @@
             <b-embed
               type="iframe"
               aspect="9by16"
-              src="https://www.youtube.com/embed/lHLIxLc6GuQ?rel=0&autoplay=0&enablejsapi=1"
+              :src="`https://www.youtube.com/embed/${service.video_link}?rel=0&autoplay=0&enablejsapi=1`"
               allowfullscreen
             ></b-embed>
           </div>
@@ -97,7 +97,7 @@ export default {
       Promise.all([api.getService(id)])
         .then(([service]) => {
           this.service = service;
-          //console.log(event);
+          console.log(service);
         })
         .finally(() => (this.isLoading = false));
     },
