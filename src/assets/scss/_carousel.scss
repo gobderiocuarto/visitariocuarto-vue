@@ -1,6 +1,7 @@
 .carousel {
   background: #000;
   margin-top: 40px;
+
   .caruosel-image {
     height: 500px;
     width: 100%;
@@ -8,9 +9,11 @@
     object-position: center;
     opacity: 0.9;
   }
+
   .carousel-caption {
     background-color: rgba($dark, 0.9);
     bottom: 40px;
+
     // width: 40%;
     // left: 30%;
     // padding: 30px 60px;
@@ -21,12 +24,14 @@
       letter-spacing: 0.06rem;
       font-size: 1.9rem;
     }
+
     .date {
       margin-bottom: 16px;
       font-size: 1rem;
       font-family: "Univia";
       color: rgba(white, 0.8);
       letter-spacing: 0.06rem;
+
       span {
         text-transform: uppercase;
         font-size: 1.1rem;
@@ -35,8 +40,10 @@
       }
     }
   }
+
   .carousel-indicators {
     bottom: -12px;
+
     li {
       height: 12px;
       width: 12px;
@@ -48,19 +55,24 @@
 @media screen and (max-width: 767px) {
   .carousel {
     margin-top: 15px;
+
     .caruosel-image {
       height: 450px;
     }
+
     .carousel-caption {
       width: 70%;
       left: 15%;
       padding: 15px;
+
       h1 {
         font-size: 1.2rem;
       }
+
       .date {
         margin-bottom: 8px;
         font-size: 0.8rem;
+
         span {
           font-size: 0.8rem;
         }

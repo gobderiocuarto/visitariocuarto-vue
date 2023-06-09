@@ -34,9 +34,9 @@
         </div>
         <div class="content-footer" v-if="event.place">
           <div class="card-place">
-            <font-awesome-icon icon="map-marker-alt" class="card-icon" /><span
-              >{{ event.place.organization }}</span
-            >
+            <font-awesome-icon icon="map-marker-alt" class="card-icon" /><span>
+              {{ event.place.organization }}
+            </span>
           </div>
           <div class="tags" v-if="event.tags">
             <div

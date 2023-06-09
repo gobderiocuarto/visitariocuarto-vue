@@ -6,8 +6,6 @@
   background: -webkit-linear-gradient(top left, #003fa2, #4ca6de);
   background: -moz-linear-gradient(top left, #003fa2, #4ca6de);
   background: linear-gradient(to bottom right, #003fa2, #4ca6de);
-  // background: $brand-primary;
-  // background: $brand-secondary;
   .navbar-brand {
     cursor: pointer;
     font-weight: 500;
@@ -39,14 +37,13 @@
     }
     .nav-item {
       text-transform: uppercase;
-      padding-left: 8px;
-      padding-right: 8px;
+      padding-left: 2px;
+      padding-right: 2px;
     }
     .nav-link {
       font-weight: 400;
-      letter-spacing: 0.04rem;
+      letter-spacing: 0.02rem;
       color: white;
-      // font-size: 1.1rem;
       text-transform: lowercase;
     }
   }

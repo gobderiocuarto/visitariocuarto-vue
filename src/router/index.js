@@ -5,6 +5,8 @@ import Events from "../views/Events.vue";
 import Event from "../views/Event.vue";
 import Services from "../views/Services.vue";
 import Service from "../views/Service.vue";
+import NotableCommerces from "../views/NotableCommerces.vue";
+import NotableCommercesSingle from "../views/NotableCommercesSingle.vue";
 
 Vue.use(VueRouter);
 
@@ -65,6 +67,22 @@ const routes = [
     component: Service,
     meta: {
       title: "Servicio",
+    },
+  },
+  {
+    path: "/comercios-notables",
+    name: "NotableCommerces",
+    component: NotableCommerces,
+    meate: {
+      title: "Comercios Notables",
+    },
+  },
+  {
+    path: "/comercios-notables/:id/:slug",
+    name: "NotableCommercesSingle",
+    component: NotableCommercesSingle,
+    meate: {
+      title: "Comercio Notable",
     },
   },
 ];
