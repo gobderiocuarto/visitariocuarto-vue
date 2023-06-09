@@ -6,7 +6,8 @@
         <Spinner />
       </div>
       <div v-if="!isLoading" class="row justify-content-between">
-        <div class="col-md-8">
+        <div class="col-md-8 col-lg-8">
+          <h4>Comercios Notables</h4>
           <h1>{{ service.name }}</h1>
           <div class="summary">{{ service.summary }}</div>
 
@@ -34,7 +35,7 @@
           <gallery-carousel :images="service.gallery_images" />
 
           <b-link
-            class="btn btn-sm btn-primary mt-3"
+            class="btn btn-sm btn-primary my-5"
             :to="{
               name: 'NotableCommerces',
             }"
@@ -42,12 +43,22 @@
             volver
           </b-link>
         </div>
-        <div class="col-md-3">
+        <div v-if="service.video_link" class="col-md-4 col-lg-3">
           <div class="video">
             <b-embed
               type="iframe"
               aspect="9by16"
               :src="`https://www.youtube.com/embed/${service.video_link}?rel=0&autoplay=0&enablejsapi=1`"
+              allowfullscreen
+            ></b-embed>
+          </div>
+        </div>
+        <div v-else class="col-md-4 col-lg-4">
+          <div class="video">
+            <b-embed
+              type="iframe"
+              aspect="16by9"
+              src="https://www.youtube.com/embed/WmYz9JhE6BA?rel=0&autoplay=0&enablejsapi=1"
               allowfullscreen
             ></b-embed>
           </div>

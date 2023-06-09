@@ -6,32 +6,37 @@
       <div class="row notable-commerces-description">
         <div class="col-md-6">
           <p class="lead">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo minus
-            possimus ducimus libero sunt aliquam dolores, enim praesentium
-            suscipit quas non quod, sequi maxime necessitatibus ad ex ab officia
-            vitae?
+            ¡Bienvenidos! En esta sección nos adentraremos en la fascinante
+            historia de los comercios notables de la ciudad de Río Cuarto.
           </p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Dignissimos delectus qui laboriosam recusandae alias ipsum fuga
-            libero adipisci, vel, animi quae porro provident maxime. Dolores,
-            sit sed? Iste, incidunt fuga.
+            Estos establecimientos icónicos no sólo son puntos de referencia en
+            nuestra ciudad, sino que también son auténticos tesoros culturales
+            que merecen ser descubiertos y valorados. Acompáñanos en este
+            recorrido virtual mientras exploramos algunos de los comercios más
+            destacados, llenos de encanto y riqueza histórica.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
-            earum.
+            El programa de comercios Notables está regido por la ordenanza
+            143/21.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            reprehenderit alias id excepturi architecto natus sint aliquam,
-            nihil temporibus dolore?
+            Si querés anotar a tu comercio en el Registro y ser parte del
+            programa, chequea este
+            <a
+              href="http://riocuarto.gov.ar/programas/comercios-notables/"
+              target="_blank"
+              ><b>link</b></a
+            >
+            en donde están las bases y condiciones y el formulario para
+            inscribirte.
           </p>
         </div>
         <div class="col-md-6">
           <b-embed
             type="iframe"
             aspect="16by9"
-            src="https://www.youtube.com/embed/lHLIxLc6GuQ?rel=0&autoplay=0&enablejsapi=1"
+            src="https://www.youtube.com/embed/WmYz9JhE6BA?rel=0&autoplay=0&enablejsapi=1"
             allowfullscreen
           ></b-embed>
         </div>
